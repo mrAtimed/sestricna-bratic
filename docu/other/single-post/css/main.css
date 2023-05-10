@@ -1,0 +1,242 @@
+/* ----------------------------------
+
+Name: main.css
+Version: 1.0
+
+-------------------------------------
+
+Table of contents
+        
+    01. Navbar
+    02. Slider
+    03. About us
+    04. Services
+    05. Some Facts
+    06. Portfolio
+    07. Testimonials
+    08. Blog
+    09. Contact
+    10. Footer
+*/
+
+body {
+    font-family: 'Muli', sans-serif;
+}
+
+/* ==========================
+   [01]. Navbar
+========================== */
+.navbar {
+    background: #2b2c2c !important;
+    padding: 25px 0;
+}
+
+.navbar .nav-item {
+    font-size: 14px;
+    font-weight: 600;
+    margin: 0 20px;
+}
+
+.navbar .nav-item .nav-link {
+    color: #7d8792;
+}
+
+.navbar .nav-item .nav-link:hover {
+    color: #ffffff;
+}
+
+.navbar .navbar-nav .dropdown .dropdown-menu {
+    margin-top: 25px;
+    background:#212222;
+}
+
+.navbar .navbar-nav .dropdown span {
+    font-size: 10px;
+    margin-left: 3px;
+}
+
+.navbar .navbar-nav .dropdown .dropdown-menu a {
+    font-size: 16px;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+.navbar .navbar-nav .dropdown .dropdown-menu a:hover {
+    background: #e0a80d;
+}
+
+/* ==========================
+   [08]. Blog
+========================== */
+
+.blog {
+    padding: 170px 0 100px 0;
+    background: #2d2e2e;
+}
+
+.blog h2 {
+    font-size: 30px;
+    font-weight: 800;
+    color: #e0a80d;
+    margin-bottom: 60px;
+}
+
+.blog .box {
+    border-radius: 10px;
+    background: #212222;
+    margin-bottom: 30px;
+}
+
+.blog .box .image {
+    position: relative;
+}
+
+.blog .box .image img {
+    width: 100%;
+}
+
+.blog .box .image a {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    padding: 5px 20px;
+    color: #ffffff;
+    background: #e0a80d;
+    border-radius: 35px;
+    font-size: 13px;
+    text-decoration: none;
+}
+
+.blog .box .text {
+    padding: 25px;
+}
+
+.blog .box h3 a {
+    font-size: 18px;
+    line-height: 25px;
+    font-weight: 700;
+    color: #eee;
+    margin-bottom: 25px;
+    margin-top: 30px;
+    text-decoration: none;
+}
+
+.blog .box h4 {
+    font-size: 13px;
+    font-weight: 300;
+    color: #e0a80d;
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+
+.blog .box p {
+    font-size: 14px;
+    font-weight: 400;
+    color: #bdbfc0;
+    line-height: 26px;
+}
+
+
+/* ==========================
+   [09]. Contact
+========================== */
+
+.contact {
+    padding: 0 0 130px 0;
+    background: #2d2e2e;
+}
+
+.contact h2 {
+    font-size: 30px;
+    font-weight: 800;
+    color: #e0a80d;
+    margin-bottom: 60px;
+}
+
+.contact .form-control {
+    padding: 25px;
+    font-size: 13px;
+    margin-bottom: 10px;
+    background: #fcf2f2;
+    border: 0;
+    border-radius: 10px;
+}
+
+.contact button.btn {
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 15px;
+    background: #e0a80d;
+    color: #ffffff;
+}
+.contact .info {
+    padding-left: 40px;
+}
+
+.contact .info span {
+    font-size: 20px;
+    color: #e0a80d;
+}
+
+.contact .info p {
+    font-size: 14px;
+    margin: 10px 0 20px 0;
+    color: #eee;
+}
+
+
+/* ==========================
+   [10]. Footer
+========================== */
+.footer {
+    padding: 40px 0;
+    background: #242527;
+}
+
+ .footer .social-icons span{
+    color: #e0a80d;
+    padding: 0 5px;
+}
+
+.footer p {
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 300;
+    margin: 0;
+    margin-top: 15px;
+}
+
+
+/* ==========================
+   [11]. Media
+========================== */
+/*Small devices (landscape phones, 576px and up) */
+@media (max-width: 575.99px) {
+
+    .blog .box {
+        margin-bottom: 30px;
+    }
+
+}
+
+/* Small devices (landscape phones, less than 768px) */
+@media (max-width: 767.98px) {
+
+    .blog .box {
+        margin-bottom: 30px;
+    }
+
+}
+
+/* Medium devices (tablets, less than 992px) */
+@media (max-width: 991.98px) {
+
+    .blog .box {
+        margin-bottom: 30px;
+    }
+}
+
+
+/* Large devices (desktops, less than 1200px) */
+@media (max-width: 1199.98px) {
+}
