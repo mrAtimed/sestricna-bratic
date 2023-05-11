@@ -1,8 +1,8 @@
 ---
 import BaseHead from '../components/BaseHead.astro';
-import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import "../styles/pico.css"
 ---
 
 <!DOCTYPE html>
@@ -11,40 +11,178 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 	</head>
 	<body>
-		<Header title={SITE_TITLE} />
 		<main>
-			<h1>🧑‍🚀 Hello, Astronaut!</h1>
-			<p>
-				Welcome to the official <a href="https://astro.build/">Astro</a> blog starter template. This
-				template serves as a lightweight, minimally-styled starting point for anyone looking to build
-				a personal website, blog, or portfolio with Astro.
-			</p>
-			<p>
-				This template comes with a few integrations already configured in your
-				<code>astro.config.mjs</code> file. You can customize your setup with
-				<a href="https://astro.build/integrations">Astro Integrations</a> to add tools like Tailwind,
-				React, or Vue to your project.
-			</p>
-			<p>Here are a few ideas on how to get started with the template:</p>
-			<ul>
-				<li>Edit this page in <code>src/pages/index.astro</code></li>
-				<li>Edit the site header items in <code>src/components/Header.astro</code></li>
-				<li>Add your name to the footer in <code>src/components/Footer.astro</code></li>
-				<li>Check out the included blog posts in <code>src/pages/blog/</code></li>
-				<li>Customize the blog post page layout in <code>src/layouts/BlogPost.astro</code></li>
-			</ul>
-			<p>
-				Have fun! If you get stuck, remember to <a href="https://docs.astro.build/"
-					>read the docs
-				</a> or <a href="https://astro.build/chat">join us on Discord</a> to ask questions.
-			</p>
-			<p>
-				Looking for a blog template with a bit more personality? Check out <a
-					href="https://github.com/Charca/astro-blog-template"
-					>astro-blog-template
-				</a> by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
-			</p>
+			<div class="container">
+
+				
+				<div class="box-canvas">
+					<div class="machine">
+						<div class="drawer"></div>
+						<div class="panel"></div>
+						<div class="door">
+							<div class="drum"></div>
+						</div>
+					</div>
+				</div>
+				<article class="bg">
+					<hgroup>
+					<h1>Temp</h1>
+				</hgroup>
+				
+			</div>
+			</article>
 		</main>
 		<Footer />
 	</body>
 </html>
+
+
+<style>
+	:root {
+  --background-color: #EE5B52;
+  --machine-white: white;
+  --machine-feature-gray: #A3A1A1;
+  --accent-green: #5FBD9D;
+  --accent-yellow: #bdbb5f;
+  --darkest-gray: #636161;
+}
+
+
+.box-canvas{
+  position: relative;
+  margin: auto;
+  display: block;
+  margin-top: 8%;
+  margin-bottom: 8%;
+  width: 600px;
+  height:600px;
+  background: var(--background-color);
+}
+
+/* Main machine body */
+.machine {
+  position: absolute;
+  left: 150px;
+  top: 100px;
+  width: 300px;
+  height: 400px;
+  background: var(--machine-white);
+  border-radius: 1rem;
+}
+
+/* Powder drawer */
+.drawer {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 100px;
+  height: 50px;
+  border: 2px solid var(--machine-feature-gray);
+  border-radius: 0 0 0.5rem 0;
+}
+
+/* Drawer handle */
+.drawer::after {
+  content: '';
+  position: absolute;
+  width: 70px;
+  height: 15px;
+  background: var(--machine-feature-gray);
+  bottom: 5px;
+  right: 5px;
+  border-radius: 0 0 0.5rem 0;
+}
+
+/* Small LED display */
+.panel {
+  position: absolute;
+  width: 40px;
+  height: 15px;
+  background: var(--darkest-gray);
+  left: 150px;
+  top: 30px;
+}
+
+/* Light indicator in panel */
+.panel::before {
+  content: '';
+  position: absolute;
+  width: 8px;
+  height: 10px;
+  background: var(--accent-green);
+  right: 5px;
+  top: 2px;
+}
+
+/* Machine dial */
+.panel::after {
+  content: '';
+  position: absolute;
+  left: 80px;
+  top: -10px;
+  width: 35px;
+  height: 35px;
+  border: 2px solid var(--machine-feature-gray);
+  border-radius: 50%;
+}
+
+/* Center of washer door, width border forming the frame */
+.door {
+  position: absolute;
+  background: var(--machine-white);
+  left: 60px;
+  bottom: 90px;
+  width: 170px;
+  height: 170px;
+  border-radius: 50%;
+  border: 5px solid var(--machine-feature-gray);
+  overflow: hidden;
+}
+
+/* Reflection on door surface */
+.door::after {
+  content: '';
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: 160px;
+  height: 160px;
+  background: radial-gradient(transparent 30%, white);
+}
+
+/* Washing machine drum */
+.drum {
+  position: absolute;
+  left: 25px;
+  top: 25px;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: var(--darkest-gray);
+  overflow: hidden;
+  animation: drumRotate 1.2s infinite ease-in;
+}
+
+/* Clothes inside machine */
+.drum::before {
+  content: '';
+  position: absolute;
+  width: 80px;
+  height: 50px;
+  background: var(--accent-yellow);
+  border-radius: 40%;
+  bottom: 0;
+}
+
+
+
+@keyframes drumRotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  
+  100% {
+    transform: rotate(360deg);
+  }
+}
+</style>
