@@ -48,8 +48,8 @@ import "../styles/pico.css";
       /* Main machine body */
       .machine {
         position: absolute;
-        left: 150px;
-        top: 100px;
+        left: 0px;
+        top: 0px;
         width: 300px;
         height: 400px;
         background: var(--machine-white);
@@ -146,7 +146,7 @@ import "../styles/pico.css";
         border-radius: 50%;
         background: var(--darkest-gray);
         overflow: hidden;
-        animation: drumRotate 1.2s infinite ease-in;
+        animation: drumRotate 5s alternate-reverse infinite ease-in-out;
       }
 
       /* Clothes inside machine */
@@ -166,7 +166,7 @@ import "../styles/pico.css";
         }
 
         100% {
-          transform: rotate(360deg);
+          transform: rotate(3960deg);
         }
       }
     </style>
