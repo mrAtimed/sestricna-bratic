@@ -1,0 +1,109 @@
+---
+import logo from "../img/Color logo - no background.svg"
+
+
+const MainMenu = [
+  { text: "Home", link: "/" },
+  { text: "Projects", link: "/projects/" },
+  // { text: "Categories", link: "/projects/cat/" },
+];
+
+export interface Props {
+  fluid?: boolean;
+}
+const { fluid = false } = Astro.props;
+---
+
+<div class="navigation bg">
+  <nav class={fluid ? "container" : "container-fluid"}>
+    <ul>
+      <li>
+        <a href="/" class="contrast"
+          >
+            <img src={logo} alt="logo" class="logo" />
+          </a
+        >
+      </li>
+    </ul>
+    <ul id="pc">
+      {
+        MainMenu.map(({ text, link }, N) => (
+          <li>
+            <a
+              class="secondary"
+              aria-current={Astro.url.pathname == link && "page"}
+              href={link}
+            >
+              {text}
+            </a>
+          </li>
+        ))
+      }
+      <!-- <li><a href="#" role="button">Button</a></li> -->
+      <!-- <li><SolidThemeSwitcher client:idle /></li> -->
+    </ul>
+    <ul id="mob">
+      <details role="list" dir="rtl">
+        <summary aria-haspopup="listbox" role="link" class="contrast">☰</summary
+        >
+        <ul role="listbox">
+          {
+            MainMenu.map(({ text, link }, N) => (
+              <li>
+                <a
+                  href={link}
+                  aria-current={Astro.url.pathname == link && "page"}
+                >
+                  {text}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </details>
+    </ul>
+  </nav>
+</div>
+
+<style is:global>
+  .logo {
+    --w: 4rem;
+    height: var(--w);
+    width: var(--w * 5);
+    transform: translateY(-0.15em);
+  }
+
+  #pc {
+    display: none;
+  }
+  #mob {
+    margin-top: 15px;
+  }
+  [aria-current="page"] {
+    font-weight: 500;
+    border-bottom: 1px solid var(--primary);
+    color: var(--contrast);
+  }
+
+  nav li a:hover {
+    background-color: var(--dropdown-hover-background-color);
+    box-shadow: 0 1px 1px var(--primary);
+    border-radius: 0;
+    color: var(--contrast);
+  }
+
+  .navigation {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+
+  @media (min-width: 992.98px) {
+    #pc {
+      display: flex;
+    }
+    #mob {
+      display: none;
+    }
+  }
+</style>

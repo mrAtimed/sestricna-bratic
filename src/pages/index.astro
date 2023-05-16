@@ -146,7 +146,7 @@ import "../styles/pico.css";
         border-radius: 50%;
         background: var(--darkest-gray);
         overflow: hidden;
-        animation: drumRotate 5s alternate-reverse infinite ease-in-out;
+        animation: drumRotate 8s alternate infinite ease-in-out;
       }
 
       /* Clothes inside machine */
@@ -161,12 +161,12 @@ import "../styles/pico.css";
       }
 
       @keyframes drumRotate {
-        0% {
+        0%,5% {
           transform: rotate(0deg);
         }
 
-        100% {
-          transform: rotate(3960deg);
+        100%,95% {
+          transform: rotate(7200deg);
         }
       }
     </style>
