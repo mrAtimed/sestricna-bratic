@@ -1,25 +1,35 @@
 ---
 import { SITE_TITLE } from "../consts";
 
+import SEO from "../components/SEO.astro";
+
 import "../styles/pico.css";
 import "../styles/css.css";
 
+/////////////////////////////////////////////////////////////////////////
+
+export interface Props {
+  title: string;
+  desc: string;
+  image?: string;
+}
+
+const { title, desc, image = "/placeholder-social.jpg" } = Astro.props;
 ---
 
-
-
 <!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>{SITE_TITLE}</title>
-</head>
-<body>
-	</Layout>
-	<main>
-		<slot></slot>
-	</main>
-</body>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <SEO />
+    <title>{SITE_TITLE}</title>
+  </head>
+  <body>
+    <main>
+      <slot />
+    </main>
+  </body>
 </html>

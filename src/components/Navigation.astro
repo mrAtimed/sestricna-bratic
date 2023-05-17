@@ -1,6 +1,5 @@
 ---
-import logo from "../img/Color logo - no background.svg"
-
+import logo from "../img/White logo - no background.svg";
 
 const MainMenu = [
   { text: "Home", link: "/" },
@@ -18,11 +17,9 @@ const { fluid = false } = Astro.props;
   <nav class={fluid ? "container" : "container-fluid"}>
     <ul>
       <li>
-        <a href="/" class="contrast"
-          >
-            <img src={logo} alt="logo" class="logo" />
-          </a
-        >
+        <a href="/" class="contrast">
+          <img src={logo} alt="logo" class="logo" />
+        </a>
       </li>
     </ul>
     <ul id="pc">
