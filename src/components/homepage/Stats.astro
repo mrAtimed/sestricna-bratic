@@ -1,0 +1,36 @@
+---
+const data = [
+  { ico: "nekaj", text: "happy clients", number: "3368" },
+  { ico: "nekaj", text: "projects completed", number: "937" },
+  { ico: "nekaj", text: "filed downloaded", number: "438" },
+  { ico: "nekaj", text: "lines of code", number: "5438" },
+];
+---
+
+<container id="stats">
+  <div class="container">
+    <div class="grid">
+      {
+        data.map(({ ico, text, number }) => (
+          <div class="stats">
+            <img src={ico} alt={text} />
+            <p>{number}</p>
+            <h5>{text}</h5>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</container>
+
+<style>
+  .stats {
+    text-align: center;
+    border: 1px solid red;
+    padding-block: 1rem;
+  }
+  @media (min-width: 768px) {
+    .stats {
+    }
+  }
+</style>

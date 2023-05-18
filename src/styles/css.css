@@ -2,41 +2,41 @@
 /* Can be forced with data-theme="light" */
 [data-theme="light"],
 :root:not([data-theme="dark"]) {
-  --primary: #fdd835;
-  --primary-hover: #fbc02d;
-  --primary-focus: rgba(253, 216, 53, 0.125);
-  --primary-inverse: rgba(0, 0, 0, 0.75);
+	--primary: #fdd835;
+	--primary-hover: #fbc02d;
+	--primary-focus: rgba(253, 216, 53, 0.125);
+	--primary-inverse: rgba(0, 0, 0, 0.75);
 }
 
 /* Yellow Dark scheme (Auto) */
 /* Automatically enabled if user has Dark mode enabled */
 @media only screen and (prefers-color-scheme: dark) {
-  :root:not([data-theme]) {
-    --primary: #fdd835;
-    --primary-hover: #ffeb3b;
-    --primary-focus: rgba(253, 216, 53, 0.25);
-    --primary-inverse: rgba(0, 0, 0, 0.75);
+	:root:not([data-theme]) {
+		--primary: #fdd835;
+		--primary-hover: #ffeb3b;
+		--primary-focus: rgba(253, 216, 53, 0.25);
+		--primary-inverse: rgba(0, 0, 0, 0.75);
 
 		/* color palete */
 		--background-color: #2d2e2e;
-  }
+	}
 }
 
 /* Yellow Dark scheme (Forced) */
 /* Enabled if forced with data-theme="dark" */
 [data-theme="dark"] {
-  --primary: #fdd835;
-  --primary-hover: #ffeb3b;
-  --primary-focus: rgba(253, 216, 53, 0.25);
-  --primary-inverse: rgba(0, 0, 0, 0.75);
+	--primary: #fdd835;
+	--primary-hover: #ffeb3b;
+	--primary-focus: rgba(253, 216, 53, 0.25);
+	--primary-inverse: rgba(0, 0, 0, 0.75);
 }
 
 /* Yellow (Common styles) */
 :root {
-  --form-element-active-border-color: var(--primary);
-  --form-element-focus-color: var(--primary-focus);
-  --switch-color: var(--primary-inverse);
-  --switch-checked-background-color: var(--primary);
+	--form-element-active-border-color: var(--primary);
+	--form-element-focus-color: var(--primary-focus);
+	--switch-color: var(--primary-inverse);
+	--switch-checked-background-color: var(--primary);
 }
 
 /* Scrollbar	 */
@@ -135,7 +135,7 @@ article:focus-within {
 }
 
 .bg {
-	background-color: #2b2c2c ;
+	background-color: #2b2c2c;
 }
 
 
@@ -143,6 +143,22 @@ article:focus-within {
 	background-color: #242527;
 }
 
-.bg-trans{
-	background-color: #2d2e2e;
+.bg-trans {
+	background-color: hsla(180, 1%, 18%, 50%);
+}
+
+.span2 {
+	grid-column: span 2;
+}
+
+
+h1,
+h2,
+h3 {
+	color: var(--primary) !important;
+	text-transform: uppercase;
+}
+
+.v-center {
+	align-items: center;
 }

@@ -2,6 +2,8 @@
 import { SITE_TITLE } from "../consts";
 
 import SEO from "../components/SEO.astro";
+import Navigation from "../components/Navigation.astro";
+import Hero from "../components/homepage/Hero.astro";
 
 import "../styles/pico.css";
 import "../styles/css.css";
@@ -12,9 +14,10 @@ export interface Props {
   title: string;
   desc: string;
   image?: string;
+  hero: boolean;
 }
 
-const { title, desc, image = "/placeholder-social.jpg" } = Astro.props;
+const { title, desc, image = "/placeholder-social.jpg", hero } = Astro.props;
 ---
 
 <!DOCTYPE html>
@@ -24,12 +27,17 @@ const { title, desc, image = "/placeholder-social.jpg" } = Astro.props;
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <SEO />
+    <SEO title="Testno" desc="lorem ipsum dolor nekaj" />
     <title>{SITE_TITLE}</title>
   </head>
   <body>
+    <Navigation />
+    <Hero />
+
     <main>
       <slot />
     </main>
+
+    Lorem, ipsum dolor.
   </body>
 </html>
