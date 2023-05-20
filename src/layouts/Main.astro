@@ -3,6 +3,7 @@ import { SITE_TITLE } from "../consts";
 
 import SEO from "../components/SEO.astro";
 import Navigation from "../components/Navigation.astro";
+import Footer from "../components/Footer.astro"
 import Hero from "../components/homepage/Hero.astro";
 
 import "../styles/picos.css";
@@ -38,6 +39,6 @@ const { title, desc, image = "/placeholder-social.jpg", hero } = Astro.props;
       <slot />
     </main>
 
-    Lorem, ipsum dolor.
+    <Footer></Footer>
   </body>
 </html>
