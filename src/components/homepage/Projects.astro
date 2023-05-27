@@ -1,8 +1,60 @@
 ---
-
+import img from "../../img/400x400.png"
 ---
 <section>
 	<div class="container">
 	<h2>Projects</h2>
+			<div class="grid col3">
+
+
+				<div class="img-projects"><img src={img} alt="">
+				<hgroup>
+					<b>Lorem, ipsum.</b>
+					<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nemo tenetur ad nulla.</p>
+				</hgroup>
+				</div>
+				<div class="img-projects"><img src={img} alt=""></div>
+				<div class="img-projects"><img src={img} alt=""></div>
+				<div class="img-projects"><img src={img} alt=""></div>
+				<div class="img-projects"><img src={img} alt=""></div>
+				<div class="img-projects"><img src={img} alt=""></div>
+			</div>
+
+
 	</div>
 </secton>
+
+<style is:inline>
+
+
+.img-projects:hover{
+	position: relative;
+}
+
+.img-projects hgroup{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 1rem;
+	position: absolute;
+	inset: 0;
+	color: white;
+	z-index: 5;
+	
+}
+
+.img-projects hgroup b {
+	font-size: 1.5rem;
+	font-weight: 800;
+}
+
+.img-projects:hover:after{
+	content: "";
+	position: absolute;
+	inset: 0;
+	background-color: var(--primary-hover);
+}
+
+
+</style>

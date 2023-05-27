@@ -1,36 +1,54 @@
 ---
+import book from "../../img/ico/icon-book.svg";
+import browser from "../../img/ico/icon-browser.svg";
+import download from "../../img/ico/icon-download.svg";
+import code from "../../img/ico/icon-code.svg";
+
 const data = [
-  { ico: "nekaj", text: "happy clients", number: "3368" },
-  { ico: "nekaj", text: "projects completed", number: "937" },
-  { ico: "nekaj", text: "filed downloaded", number: "438" },
-  { ico: "nekaj", text: "lines of code", number: "5438" },
+	{ico: book, text: "happy clients", number: "3368"},
+	{ico: browser, text: "projects completed", number: "937"},
+	{ico: download, text: "filed downloaded", number: "438"},
+	{ico: code, text: "lines of code", number: "5438"},
 ];
 ---
 
-<container id="stats">
-  <div class="container">
-    <div class="grid">
-      {
-        data.map(({ ico, text, number }) => (
-          <div class="stats">
-            <img src={ico} alt={text} />
-            <p>{number}</p>
-            <h5>{text}</h5>
-          </div>
-        ))
-      }
-    </div>
-  </div>
-</container>
+<section class="bg-something">
+	<div class="container">
+		<div class="grid">
+			{
+				data.map(({ico, text, number}) => (
+					<div class="stats">
+						<img src={ico} class="icons" />
+						<hgroup>
+							<br />
+							<h4>{number}</h4>
+							<p>{text}</p>
+						</hgroup>
+					</div>
+				))
+			}
+		</div>
+	</div>
+</section>
 
 <style>
-  .stats {
-    text-align: center;
-    border: 1px solid red;
-    padding-block: 1rem;
-  }
-  @media (min-width: 768px) {
-    .stats {
-    }
-  }
+	.stats {
+		text-align: center;
+		padding-block: 1rem;
+	}
+	@media (min-width: 768px) {
+		.stats {
+		}
+	}
+
+	.bg-something {
+		padding-block: 4rem;
+		background: url(../img/bg/some-facts-bg.png) center center no-repeat;
+		background-size: cover;
+		background-attachment: fixed;
+	}
+	.icons {
+		height: 2rem;
+		width: 2rem;
+	}
 </style>

@@ -3,7 +3,10 @@ import logo from "../img/White logo - no background.svg";
 
 const MainMenu = [
   { text: "Home", link: "/" },
-  { text: "Projects", link: "/projects/" },
+  { text: "Services", link: "/services/" },
+  { text: "About", link: "/about/" },
+  { text: "Contact", link: "/contact/" },
+  { text: "Blog", link: "/blgo/" },
   // { text: "Categories", link: "/projects/cat/" },
 ];
 
@@ -14,7 +17,7 @@ const { fluid = false } = Astro.props;
 ---
 
 <div class="navigation bg">
-  <nav class={fluid ? "container" : "container-fluid"}>
+  <nav class={!fluid ? "container" : "container-fluid"}>
     <ul>
       <li>
         <a href="/" class="contrast">

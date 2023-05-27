@@ -134,6 +134,25 @@ article:focus-within {
 
 }
 
+
+.col3{
+	grid-template-columns: repeat(1, 1fr);
+	gap: 1rem;
+}
+
+@media (min-width: 767.98px){
+	.col3{
+	grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+@media (min-width: 992.98px){
+	.col3{
+	grid-template-columns: repeat(3, 1fr);
+	}
+}
+
+
 .bg {
 	background-color: #2b2c2c;
 }
@@ -161,4 +180,20 @@ h3 {
 
 .v-center {
 	align-items: center;
+}
+
+.btn-round{
+	border-radius: 10rem;
+	background-color: transparent;
+	
+}
+*,*:hover{
+
+	transition: 400ms;
+}
+.btn-round:hover{
+	background-color: var(--primary);
+	transition: 1000ms;
+	border-color: var(--contrast);
+	color: var(--contrast);
 }
