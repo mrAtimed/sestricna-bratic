@@ -135,20 +135,30 @@ article:focus-within {
 }
 
 
-.col3{
+.col3 {
 	grid-template-columns: repeat(1, 1fr);
 	gap: 1rem;
 }
 
-@media (min-width: 767.98px){
-	.col3{
+.col2 {
 	grid-template-columns: repeat(2, 1fr);
-	}
 }
 
-@media (min-width: 992.98px){
-	.col3{
-	grid-template-columns: repeat(3, 1fr);
+@media (min-width: 767.98px) {
+	.col3 {
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+
+}
+
+@media (min-width: 992.98px) {
+	.col3 {
+		grid-template-columns: repeat(3, 1fr);
+	}
+
+	.col2 {
+		grid-template-columns: repeat(4, 1fr);
 	}
 }
 
@@ -182,16 +192,19 @@ h3 {
 	align-items: center;
 }
 
-.btn-round{
+.btn-round {
 	border-radius: 10rem;
 	background-color: transparent;
-	
+
 }
-*,*:hover{
+
+*,
+*:hover {
 
 	transition: 400ms;
 }
-.btn-round:hover{
+
+.btn-round:hover {
 	background-color: var(--primary);
 	transition: 1000ms;
 	border-color: var(--contrast);
