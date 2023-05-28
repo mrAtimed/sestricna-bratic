@@ -30,6 +30,8 @@ const { title, desc, image = "/placeholder-social.jpg", hero } = Astro.props;
 
     <SEO title="Testno" desc="lorem ipsum dolor nekaj" />
     <title>{SITE_TITLE}</title>
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+
   </head>
   <body>
     <Navigation  fluid={true}/>
@@ -38,7 +40,17 @@ const { title, desc, image = "/placeholder-social.jpg", hero } = Astro.props;
     <main>
       <slot />
     </main>
-
+    <script>
+      if (window.netlifyIdentity) {
+        window.netlifyIdentity.on("init", user => {
+          if (!user) {
+            window.netlifyIdentity.on("login", () => {
+              document.location.href = "/admin/";
+            });
+          }
+        });
+      }
+    </script>
     <Footer></Footer>
   </body>
 </html>
