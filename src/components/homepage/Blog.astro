@@ -1,13 +1,49 @@
 ---
+import { getCollection } from "astro:content";
+import { Debug } from "astro/components";
+import FormattedDate from "../../components/FormattedDate.astro";
+
+const data = await getCollection("blog")
+import img from "../../img/400x250.png"
 ---
 
 <section>
   <div class="container">
     <h2>Blog</h2>
     <div class="grid">
-      <article>aa</article>
-      <article>bb</article>
-      <article>cc</article>
+      {
+        data.map(({data}) =>(
+          <article class="blog">
+            <img src={img} alt="">
+            <div class="blog-desc">
+              <hgroup>
+                <h4>
+                  <b>{data.title}</b>
+                  </h4>
+                <p>{data.pubDate}</p>
+                </hgroup>
+                <p>{data.description}</p>
+                </div>
+                </article>
+                ))
+      }
+
+
+
     </div>
   </div>
 </section>
+
+<style>
+  .grid{
+    gap: 3rem;
+  }
+  .blog{
+    padding: 0;
+    border-radius:0 0 1rem 1rem;
+  }
+
+  .blog-desc{
+    padding: 1rem 2rem;
+  }
+</style>
