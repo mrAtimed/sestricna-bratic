@@ -22,3 +22,15 @@ collections:
           - {label: "Publish Datum", name: "pubDate", widget: "datetime"}
           - {label: "Hero image", name: "heroImage", widget: "image"}
           - {label: "Body", name: "body", widget: "markdown"}
+
+    - name: "Footer pages" # Used in routes, e.g., /admin/collections/blog
+      label: "footer" # Used in the UI
+      folder: "src/content/footer/" # The path to the folder where the documents are stored
+      create: true # Allow users to create new documents in this collection
+      slug: "{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
+      fields: # The fields for each document, usually in front matter
+          - {label: "Naslov", name: "title", widget: "string"}
+          - {label: "Kratki Opis", name: "description", widget: "string"}
+          - {label: "Publish Datum", name: "pubDate", widget: "datetime"}
+          - {label: "Hero image", name: "heroImage", widget: "image"}
+          - {label: "Body", name: "body", widget: "markdown"}

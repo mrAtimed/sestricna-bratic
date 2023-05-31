@@ -1,9 +1,8 @@
 ---
 import { getCollection } from "astro:content";
-import { Debug } from "astro/components";
-import FormattedDate from "../../components/FormattedDate.astro";
 
 const data = await getCollection("blog");
+const posts = data.slice(0,2)
 import img from "../../img/400x250.png";
 ---
 
@@ -12,7 +11,7 @@ import img from "../../img/400x250.png";
     <h2>Blog</h2>
     <div class="grid">
       {
-        data.map((post) => (
+        posts.map((post) => (
           <article class="blog">
             <img src={img} alt="" />
             <div class="blog-desc">
@@ -31,8 +30,12 @@ import img from "../../img/400x250.png";
       }
     </div>
   </div>
+  
 </section>
+<div class="container">
+  <a href="/blog/" role="button" class="outline">more.</a>
 
+</div>
 <style>
   .grid {
     gap: 3rem;
