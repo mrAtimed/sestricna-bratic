@@ -16,8 +16,8 @@ const post = Astro.props;
 const { Content } = await post.render();
 ---
 
-<Main hero={false}>
-  <!-- <BlogPost {...post.data}> -->
+<Main hero={false} title={post.data.title}>
+  <img src={post.data.heroImage} alt={post.data.title} />
   <div class="container">
     <h1>{post.data.title}</h1>
     <Content />

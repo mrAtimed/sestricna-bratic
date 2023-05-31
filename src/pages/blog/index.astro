@@ -25,5 +25,36 @@ const posts = (await getCollection("blog")).sort(
         }
       </ul>
     </section>
+    <section>
+      <div class="grid">
+        {
+          posts.map((post) => (
+            <article class="blog">
+              <img src={post.data.heroImage} alt="" />
+              <div class="blog-desc">
+                <hgroup>
+                  <a href={`/blog/${post.slug}/`}>
+                    <h4>
+                      <b>{post.data.title}</b>
+                    </h4>
+                  </a>
+                </hgroup>
+                <p>{post.data.description}</p>
+              </div>
+            </article>
+          ))
+        }
+      </div>
+    </section>
   </div>
 </Main>
+
+<style>
+  .blog {
+    padding: 0;
+  }
+
+  .blog-desc {
+    padding: 1rem 2rem;
+  }
+</style>

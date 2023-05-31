@@ -36,10 +36,16 @@ const { title, desc, image = "/placeholder-social.jpg", hero } = Astro.props;
   <body>
     <Navigation fluid={true} />
     {hero && <Hero />}
+    {
+      hero ? (
+        <main>
+          <slot />
+        </main>
+      ) : (
+        <slot />
+      )
+    }
 
-    <main>
-      <slot />
-    </main>
     <Footer />
   </body>
 </html>

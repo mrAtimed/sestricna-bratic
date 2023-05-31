@@ -12,17 +12,19 @@ import img from "../../img/400x250.png";
     <h2>Blog</h2>
     <div class="grid">
       {
-        data.map(({ data }) => (
+        data.map((post) => (
           <article class="blog">
             <img src={img} alt="" />
             <div class="blog-desc">
               <hgroup>
                 <h4>
-                  <b>{data.title}</b>
+                  <a href={`/blog/${post.slug}/`}>
+                    <b>{post.data.title}</b>
+                  </a>
                 </h4>
-                <p>{data.pubDate}</p>
+                <p>{post.data.pubDate}</p>
               </hgroup>
-              <p>{data.description}</p>
+              <p>{post.data.description}</p>
             </div>
           </article>
         ))
