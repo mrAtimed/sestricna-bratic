@@ -8,7 +8,7 @@ media_folder: "/public/uploads" # Media files will be stored in the repo under s
 public_folder: "/uploads" # The src attribute for uploaded medi
 logo_url: https://sestricna-bratic.netlify.app/cms.svg
 
-local_backend: true
+# local_backend: true
 
 collections:
 
