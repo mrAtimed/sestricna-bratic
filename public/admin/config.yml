@@ -1,14 +1,13 @@
 backend:
     name: git-gateway
-    branch: master # Branch to update (optional; defaults to master)
+    branch: master
+    repo: mrAtimed/sestricna-bratic
 
 publish_mode: editorial_workflow
 
 media_folder: "/public/uploads" # Media files will be stored in the repo under static/images/uploads
 public_folder: "/uploads" # The src attribute for uploaded medi
 logo_url: https://sestricna-bratic.netlify.app/cms.svg
-
-# local_backend: true
 
 collections:
 
