@@ -3,8 +3,8 @@ import { getCollection } from "astro:content";
 import { Debug } from "astro/components";
 import FormattedDate from "../../components/FormattedDate.astro";
 
-const data = await getCollection("blog")
-import img from "../../img/400x250.png"
+const data = await getCollection("blog");
+import img from "../../img/400x250.png";
 ---
 
 <section>
@@ -12,38 +12,35 @@ import img from "../../img/400x250.png"
     <h2>Blog</h2>
     <div class="grid">
       {
-        data.map(({data}) =>(
+        data.map(({ data }) => (
           <article class="blog">
-            <img src={img} alt="">
+            <img src={img} alt="" />
             <div class="blog-desc">
               <hgroup>
                 <h4>
                   <b>{data.title}</b>
-                  </h4>
+                </h4>
                 <p>{data.pubDate}</p>
-                </hgroup>
-                <p>{data.description}</p>
-                </div>
-                </article>
-                ))
+              </hgroup>
+              <p>{data.description}</p>
+            </div>
+          </article>
+        ))
       }
-
-
-
     </div>
   </div>
 </section>
 
 <style>
-  .grid{
+  .grid {
     gap: 3rem;
   }
-  .blog{
+  .blog {
     padding: 0;
-    border-radius:0 0 1rem 1rem;
+    border-radius: 0 0 1rem 1rem;
   }
 
-  .blog-desc{
+  .blog-desc {
     padding: 1rem 2rem;
   }
 </style>

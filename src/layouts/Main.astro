@@ -3,7 +3,7 @@ import { SITE_TITLE } from "../consts";
 
 import SEO from "../components/SEO.astro";
 import Navigation from "../components/Navigation.astro";
-import Footer from "../components/Footer.astro"
+import Footer from "../components/Footer.astro";
 import Hero from "../components/homepage/Hero.astro";
 
 import "../styles/picos.css";
@@ -30,27 +30,16 @@ const { title, desc, image = "/placeholder-social.jpg", hero } = Astro.props;
 
     <SEO title="Testno" desc="lorem ipsum dolor nekaj" />
     <title>{SITE_TITLE}</title>
-    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"
+    ></script>
   </head>
   <body>
-    <Navigation  fluid={true}/>
-    <Hero />
+    <Navigation fluid={true} />
+    {hero && <Hero />}
 
     <main>
       <slot />
     </main>
-    <script>
-      if (window.netlifyIdentity) {
-        window.netlifyIdentity.on("init", user => {
-          if (!user) {
-            window.netlifyIdentity.on("login", () => {
-              document.location.href = "/admin/";
-            });
-          }
-        });
-      }
-    </script>
-    <Footer></Footer>
+    <Footer />
   </body>
 </html>
