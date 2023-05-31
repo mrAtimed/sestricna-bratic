@@ -198,8 +198,8 @@ h3 {
 
 }
 
-*,
-*:hover {
+main,
+main:hover {
 
 	transition: 400ms;
 }
