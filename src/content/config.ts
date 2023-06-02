@@ -31,6 +31,7 @@ const footer = defineCollection({
 			.string()
 			.optional()
 			.transform((str) => (str ? new Date(str) : undefined)),
+		heroImage: z.string().optional(),
 	}),
 });
 export const collections = { blog , footer};
