@@ -22,3 +22,8 @@ class: invert
 - [ ] pravila privatnosti
 - [ ] cookie policy
 - [ ] potpis
+
+
+**stilovi**
+- [ ] malo stilizirati
+- [ ] dodatne animacije
