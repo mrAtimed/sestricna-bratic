@@ -1,0 +1,60 @@
+---
+import Main from "../../layouts/Main.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../../consts";
+import { getCollection } from "astro:content";
+import FormattedDate from "../../components/FormattedDate.astro";
+
+const posts = (await getCollection("blog")).sort(
+  (a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
+);
+---
+
+<Main hero={false}>
+  <div class="container">
+    <section>
+      <ul>
+        {
+          posts.map((post) => (
+            <li>
+              <FormattedDate date={post.data.pubDate} />
+              <a href={`/blog/${post.slug}/`}>{post.data.title}</a>
+            </li>
+          ))
+        }
+      </ul>
+    </section>
+    <section>
+      <div class="grid">
+        {
+          posts.map((post) => (
+            <article class="blog">
+              <img src={post.data.heroImage} alt="" />
+              <div class="blog-desc">
+                <hgroup>
+                  <a href={`/blog/${post.slug}/`}>
+                    <h4>
+                      <b>{post.data.title}</b>
+                    </h4>
+                  </a>
+                </hgroup>
+                <p>{post.data.description}</p>
+              </div>
+            </article>
+          ))
+        }
+      </div>
+    </section>
+  </div>
+</Main>
+
+<style>
+  .blog {
+    padding: 0;
+  }
+
+  .blog-desc {
+    padding: 1rem 2rem;
+  }
+</style>

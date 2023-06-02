@@ -32,5 +32,4 @@ collections:
           - {label: "Naslov", name: "title", widget: "string"}
           - {label: "Kratki Opis", name: "description", widget: "string"}
           - {label: "Publish Datum", name: "pubDate", widget: "datetime"}
-          - {label: "Hero image", name: "heroImage", widget: "image"}
           - {label: "Body", name: "body", widget: "markdown"}

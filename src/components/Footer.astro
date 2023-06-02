@@ -1,17 +1,72 @@
 ---
+import {literal} from "astro/zod";
+import {CollectionEntry, getCollection} from "astro:content";
+
 const today = new Date();
+
+const pages = await getCollection("footer");
+
+const post = Astro.props;
 ---
 
 <footer class="gb">
 	<div class="container">
-
-		&copy; {today.getFullYear()} YOUR NAME HERE. All rights reserved.
+		<aside id="mob">
+			<ul>
+				{
+					pages.map((page) => (
+						<li>
+							<a href={`/footer/${page.slug}`}>{page.data.title}</a>
+						</li>
+					))
+				}
+				<li>
+					&copy; {today.getFullYear()} YOUR NAME HERE. All rights reserved.
+				</li>
+				<a href="/admin/index.html">LOGIN</a>
+	</aside>
+		<nav id="pc">
+			<ul>
+				{
+					pages.map((page) => (
+						<li>
+							<a href={`/footer/${page.slug}`}>{page.data.title}</a>
+						</li>
+					))
+				}
+			</ul>
+			<ul>
+				<li>
+					<a href="/admin/index.html">LOGIN</a>
+				</li>
+			</ul>
+			<ul>
+				<li>
+					&copy; {today.getFullYear()} YOUR NAME HERE. All rights reserved.
+				</li>
+			</ul>
+		</nav>
 	</div>
-	<a href="/admin/index.html">LOGIN</a>
 </footer>
 <style>
 	footer {
 		padding: 25px;
 		text-align: center;
 	}
+
+	#pc{
+		display: none;
+	}
+
+	#mob{
+		display: block;
+	}
+	@media (min-width: 992.98px) {
+    #pc {
+      display: block;
+    }
+    #mob {
+      display: none;
+    }
+  }
 </style>

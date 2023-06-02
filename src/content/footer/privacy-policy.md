@@ -1,5 +1,5 @@
 ---
-title: "Second post"
+title: "Privacy Policy"
 description: "Lorem ipsum dolor sit amet"
 pubDate: 2022-01-05
 heroImage: "/uploads/placeholder-hero.jpg"
