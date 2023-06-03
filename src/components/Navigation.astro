@@ -1,5 +1,8 @@
 ---
-import logo from "../img/White logo - no background.svg";
+import { Image } from "@astrojs/image/components";
+
+import logo from "../img/White logo - no background.png";
+
 
 const MainMenu = [
   { text: "Home", link: "/" },
@@ -21,7 +24,14 @@ const { fluid = false } = Astro.props;
     <ul>
       <li>
         <a href="/" class="contrast">
-          <img src={logo} alt="logo" class="logo" />
+          <Image
+          src={logo}
+          alt="logo"
+          class="logo"
+          height={50}
+          width={155}
+          format="webp"
+          />
         </a>
       </li>
     </ul>

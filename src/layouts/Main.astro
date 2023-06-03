@@ -32,7 +32,7 @@ const { title, desc, image = "/placeholder-social.jpg", hero } = Astro.props;
     <title>{SITE_TITLE}</title>
   </head>
   <body>
-    <Navigation fluid={true} />
+    <Navigation fluid={false} />
     {hero && <Hero />}
     {
       hero ? (

@@ -1,9 +1,11 @@
 ---
 import { getCollection } from "astro:content";
+import { Image } from "@astrojs/image/components";
+
+import img from "../../img/400x250.png";
 
 const data = await getCollection("blog");
 const posts = data.slice(0,2)
-import img from "../../img/400x250.png";
 ---
 
 <section>
@@ -13,7 +15,15 @@ import img from "../../img/400x250.png";
       {
         posts.map((post) => (
           <article class="blog">
-            <img src={img} alt="" />
+            <Image
+            src={img}
+            alt=""
+            format="webp"
+            width={400}
+            height={250}
+            quality={72}
+            loading="lazy"
+            />
             <div class="blog-desc">
               <hgroup>
                 <h4>

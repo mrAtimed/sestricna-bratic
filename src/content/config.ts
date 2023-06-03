@@ -34,4 +34,15 @@ const footer = defineCollection({
 		heroImage: z.string().optional(),
 	}),
 });
-export const collections = { blog , footer};
+
+const services = defineCollection({
+	// Type-check frontmatter using a schema
+	schema: z.object({
+		title: z.string(),
+		description: z.string(),
+		// Transform string to Date object
+		image: z.string().optional(),
+	}),
+});
+
+export const collections = { blog , footer, services};

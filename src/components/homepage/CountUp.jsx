@@ -1,4 +1,4 @@
-import { createSignal, crea } from "solid-js"
+import { createSignal } from "solid-js"
 
 const CountUp = () => {
 	const [value, setValue] = createSignal(12);

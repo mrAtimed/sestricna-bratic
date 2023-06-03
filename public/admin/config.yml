@@ -43,3 +43,4 @@ collections:
       - {label: "Kratki Opis", name: "description", widget: "string"}
       - {label: "Ikona", name: "image", widget: "image"}
       - {label: "Opis", name: "body", widget: "markdown"}
+      - {label: "Body", name: "body", widget: "markdown"}

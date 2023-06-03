@@ -17,6 +17,7 @@ class: invert
 - [ ] slider
 - [ ] google analytics
 - [ ] popup banner
+- [ ] image compression / .webp
 
 **textovi**
 - [ ] pravila privatnosti
