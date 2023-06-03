@@ -1,7 +1,6 @@
 ---
 import Main from "../../layouts/Main.astro";
-import Header from "../../components/Header.astro";
-import Footer from "../../components/Footer.astro";
+import { Image } from "@astrojs/image/components";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../../consts";
 import { getCollection } from "astro:content";
 import FormattedDate from "../../components/FormattedDate.astro";
@@ -14,23 +13,17 @@ const posts = (await getCollection("blog")).sort(
 <Main hero={false}>
   <div class="container">
     <section>
-      <ul>
-        {
-          posts.map((post) => (
-            <li>
-              <FormattedDate date={post.data.pubDate} />
-              <a href={`/blog/${post.slug}/`}>{post.data.title}</a>
-            </li>
-          ))
-        }
-      </ul>
-    </section>
-    <section>
       <div class="grid">
         {
           posts.map((post) => (
             <article class="blog">
-              <img src={post.data.heroImage} alt="" />
+              <Image
+              src={post.data.heroImage}
+              alt=""
+              format="webp"
+              height={200}
+              aspectRatio={16/9}              
+              />
               <div class="blog-desc">
                 <hgroup>
                   <a href={`/blog/${post.slug}/`}>

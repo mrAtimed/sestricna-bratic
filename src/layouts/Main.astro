@@ -15,7 +15,7 @@ export interface Props {
   title: string;
   desc: string;
   image?: string;
-  hero: boolean;
+  hero?: boolean;
 }
 
 const { title, desc, image = "/placeholder-social.jpg", hero } = Astro.props;
@@ -29,7 +29,7 @@ const { title, desc, image = "/placeholder-social.jpg", hero } = Astro.props;
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <SEO title={title} desc={desc} />
-    <title>{SITE_TITLE}</title>
+    <title>{`${SITE_TITLE} - ${title}`}</title>
   </head>
   <body>
     <Navigation fluid={false} />

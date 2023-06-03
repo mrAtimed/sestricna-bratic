@@ -16,6 +16,8 @@ const MainMenu = [
 export interface Props {
   fluid?: boolean;
 }
+
+
 const { fluid = false } = Astro.props;
 ---
 
@@ -26,11 +28,11 @@ const { fluid = false } = Astro.props;
         <a href="/" class="contrast">
           <Image
           src={logo}
-          alt="logo"
-          class="logo"
-          height={50}
-          width={155}
+          height={60}
           format="webp"
+          alt="logo"
+          aspectRatio={155/50}
+          class="logo"
           />
         </a>
       </li>

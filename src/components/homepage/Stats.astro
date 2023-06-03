@@ -1,16 +1,19 @@
 ---
 import { Image } from "@astrojs/image/components";
+import CountUp from "./CountUp";
+
 
 import book from "../../img/400x250.png";
 import browser from "../../img/400x250.png";
 import download from "../../img/400x250.png";
 import code from "../../img/400x250.png";
 
+
 const data = [
-	{ico: book, text: "happy clients", number: "3368"},
-	{ico: browser, text: "projects completed", number: "937"},
-	{ico: download, text: "filed downloaded", number: "438"},
-	{ico: code, text: "lines of code", number: "5438"},
+	{ico: book, text: "happy clients", num: "3368"},
+	{ico: browser, text: "projects completed", num: "937"},
+	{ico: download, text: "filed downloaded", num: "438"},
+	{ico: code, text: "lines of code", num: "5438"},
 ];
 ---
 
@@ -18,7 +21,7 @@ const data = [
 	<div class="container">
 		<div class="grid col2">
 			{
-				data.map(({ico, text, number}) => (
+				data.map(({ico, text, num}, N) => (
 					<div class="stats">
 						<Image
 						src={ico}
@@ -32,7 +35,7 @@ const data = [
 						/>
 						<hgroup>
 							<br />
-							<h4>{number}</h4>
+							<h4><CountUp end={num} steps={26} client:visible/></h4>
 							<p>{text}</p>
 						</hgroup>
 					</div>

@@ -1,6 +1,6 @@
 ---
 import { CollectionEntry, getCollection } from "astro:content";
-
+import { Image } from "@astrojs/image/components";
 import Main from "../../layouts/Main.astro";
 
 export async function getStaticPaths() {
@@ -16,8 +16,15 @@ const post = Astro.props;
 const { Content } = await post.render();
 ---
 
-<Main hero={false} title={post.data.title}>
-  <img src={post.data.heroImage} alt={post.data.title} />
+<Main title={post.data.title} desc={post.data.description} hero={false}>
+  <Image
+  src={post.data.heroImage}
+  alt={post.data.title}
+  height={200}
+  aspectRatio={16/9}
+  format="webp"
+  quality={72}
+/>
   <div class="container">
     <h1>{post.data.title}</h1>
     <Content />
