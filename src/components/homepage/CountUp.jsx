@@ -36,3 +36,5 @@ const CountUp = ({ end, steps = 13}) => {
 }
 
 export default CountUp
+
+

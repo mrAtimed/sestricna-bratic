@@ -467,7 +467,7 @@ kbd {
   --blockquote-footer-color: var(--muted-color);
   --button-box-shadow: 0 0 0 rgba(0, 0, 0, 0);
   --button-hover-box-shadow: 0 0 0 rgba(0, 0, 0, 0);
-  --form-element-background-color: #11191f;
+  --form-element-background-color: #242527; 
   --form-element-border-color: #374956;
   --form-element-color: var(--color);
   --form-element-placeholder-color: var(--muted-color);
@@ -1989,7 +1989,7 @@ article {
   margin: var(--block-spacing-vertical) 0;
   padding: var(--block-spacing-vertical) var(--block-spacing-horizontal);
   border-radius: var(--border-radius);
-  background: hsla(207, 31%, 11%, 0.55);
+  background: #242527;
   box-shadow: var(--card-box-shadow);
 }
 
