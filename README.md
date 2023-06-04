@@ -10,14 +10,14 @@ class: invert
 - [ ] services
 - [ ] footer nav 
 - [ ] sliders
-- [ ] reference ??
+- [x] reference ??
 
 **js**
-- [ ] count up component 
+- [x] count up component 
 - [ ] slider
 - [ ] google analytics
 - [ ] popup banner
-- [ ] image compression / .webp
+- [x] image compression / .webp
 
 **textovi**
 - [ ] pravila privatnosti
@@ -26,5 +26,5 @@ class: invert
 
 
 **stilovi**
-- [ ] malo stilizirati
+- [x] malo stilizirati
 - [ ] dodatne animacije
