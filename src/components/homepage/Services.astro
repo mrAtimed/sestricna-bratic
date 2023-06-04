@@ -1,8 +1,11 @@
 ---
 import { getCollection } from "astro:content";
-import { Image, Picture } from '@astrojs/image/components';
-import img from "../../img/400x350.png"
+
+import ArticleBlock from "../util/ArticleBlock.astro";
+
 const data = await getCollection("services");
+
+
 
 ---
 
@@ -13,23 +16,13 @@ const data = await getCollection("services");
 
       {
         data.map((item)=>(
-          <article>
-            <Image
-            src={img}
-            alt={item.data.title}
-            format="webp"
-            width={400}
-            height={350}
-            quality={52}
-            loading="lazy"
-            />
-            <hgroup>
-              <h3>{item.data.title}</h3>
-              <p>{item.data.description}</p>
-              </hgroup>
-
-              <a href={`/services/${item.slug}`}>more..</a>
-            </article>
+          <ArticleBlock
+          title={item.data.title}
+          sub={item.data.description}
+          link={item.slug}
+          img={item.data.image}
+          >
+          </ArticleBlock>
         ))
       }
 

@@ -1,13 +1,9 @@
 ---
 import { getCollection } from "astro:content";
-import { Image } from "@astrojs/image/components";
-
-import img from "../../img/400x250.png";
+import ArticleBlock from "../util/ArticleBlock.astro";
 
 const data = await getCollection("blog");
 const posts = data.slice(0,2)
-
-
 ---
 
 <section>
@@ -16,28 +12,14 @@ const posts = data.slice(0,2)
     <div class="grid">
       {
         posts.map((post) => (
-          <article class="blog">
-            <Image
-            src={img}
-            alt=""
-            format="webp"
-            width={400}
-            height={250}
-            quality={72}
-            loading="lazy"
-            />
-            <div class="blog-desc">
-              <hgroup>
-                <h4>
-                  <a href={`/blog/${post.slug}/`}>
-                    <b>{post.data.title}</b>
-                  </a>
-                </h4>
-                <p>{post.data.pubDate}</p>
-              </hgroup>
-              <p>{post.data.description}</p>
-            </div>
-          </article>
+          <ArticleBlock
+          title={post.data.title}
+          date={post.data.pubDate}
+          link={post.slug}
+          img={post.data.heroImage}
+          >
+          {post.data.description}
+          </ArticleBlock>
         ))
       }
     </div>
@@ -48,16 +30,3 @@ const posts = data.slice(0,2)
   <a href="/blog/" role="button" class="outline">more.</a>
 
 </div>
-<style>
-  .grid {
-    gap: 2rem;
-  }
-  .blog {
-    padding: 0;
-    border-radius: 0 0 1rem 1rem;
-  }
-
-  .blog-desc {
-    padding: 1rem 2rem;
-  }
-</style>
