@@ -1,0 +1,48 @@
+---
+import {Image} from "@astrojs/image/components";
+import FormattedDate from "../FormattedDate.astro";
+interface Props {
+	title: string;
+	sub?: any;
+	date?: any;
+	link?: string;
+	img?: any;
+}
+
+const {title, sub, link, img, date} = Astro.props;
+---
+
+<article>
+	{img && <Image src={img} alt={`${title} image`} height={350} aspectRatio={16 / 9} format="webp" />}
+	<div>
+		<hgroup>
+			{
+				title ? (
+				<h3>
+					<a href={`/services/${link}`}>
+						{title}
+					</a>
+				</h3>
+				) : (
+					"---"
+				)
+			}
+			{sub && <p>{sub}</p>}
+			{date && <sub><FormattedDate date={date} /></sub>}
+		</hgroup>
+		<p>
+			<slot />
+		</p>
+	</div>
+</article>
+
+<style is:global>
+	article:has(img) {
+		padding: 0;
+		border-radius:  0 0 2rem 2rem;
+	}
+
+	article:has(img) > :nth-child(2) {
+		padding: 2rem;
+	}
+</style>
