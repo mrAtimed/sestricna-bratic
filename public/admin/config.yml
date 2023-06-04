@@ -8,6 +8,8 @@ publish_mode: editorial_workflow
 media_folder: "/public/uploads" # Media files will be stored in the repo under static/images/uploads
 public_folder: "/uploads" # The src attribute for uploaded medi
 logo_url: https://sestricna-bratic.netlify.app/cms.svg
+local_backend: true
+
 
 collections:
 
@@ -22,8 +24,8 @@ collections:
       - {label: "Publish Datum", name: "pubDate", widget: "datetime"}
       - {label: "Hero image", name: "heroImage", widget: "image"}
       - {label: "Body", name: "body", widget: "markdown"}
-- name: "Footer pages" # Used in routes, e.g., /admin/collections/blog
-  label: "footer" # Used in the UI
+- name: "footer" # Used in routes, e.g., /admin/collections/blog
+  label: "Footer nav" # Used in the UI
   folder: "src/content/footer/" # The path to the folder where the documents are stored
   create: true # Allow users to create new documents in this collection
   slug: "{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
@@ -33,7 +35,7 @@ collections:
       - {label: "Publish Datum", name: "pubDate", widget: "datetime"}
       - {label: "Hero image", name: "heroImage", widget: "image"}
       - {label: "Body", name: "body", widget: "markdown"}
-- name: "services" # Used in routes, e.g., /admin/collections/blog
+- name: "usluge" # Used in routes, e.g., /admin/collections/blog
   label: "Usluge" # Used in the UI
   folder: "src/content/services/" # The path to the folder where the documents are stored
   create: true # Allow users to create new documents in this collection
@@ -41,6 +43,6 @@ collections:
   fields: # The fields for each document, usually in front matter
       - {label: "Naslov", name: "title", widget: "string"}
       - {label: "Kratki Opis", name: "description", widget: "string"}
-      - {label: "Ikona", name: "image", widget: "image"}
-      - {label: "Opis", name: "body", widget: "markdown"}
+      - {label: "Publish Datum", name: "pubDate", widget: "datetime"}
+      - {label: "Hero image", name: "heroImage", widget: "image"}
       - {label: "Body", name: "body", widget: "markdown"}
