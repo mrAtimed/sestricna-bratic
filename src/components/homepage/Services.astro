@@ -5,8 +5,7 @@ import ArticleBlock from "../util/ArticleBlock.astro";
 
 const data = await getCollection("services");
 
-
-
+import test from "../../img/icons/icon-brackets.png"
 ---
 
 <section id="services">
@@ -19,8 +18,8 @@ const data = await getCollection("services");
           <ArticleBlock
           title={item.data.title}
           sub={item.data.description}
-          link={item.slug}
-          img={item.data.image}
+          link={`/services/${item.slug}`}
+          ico={item.data.description}
           >
           </ArticleBlock>
         ))

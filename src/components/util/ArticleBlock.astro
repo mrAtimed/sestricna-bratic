@@ -7,19 +7,21 @@ interface Props {
 	date?: Date;
 	link?: string;
 	img?: any;
+	ico?: any;
 }
 
-const {title, sub, link, img, date} = Astro.props;
+const {title, sub, link, img, ico, date} = Astro.props;
 ---
 
 <article>
 	{img && <Image src={img} alt={`${title} image`} height={350} aspectRatio={16 / 9} format="webp" />}
+	{ico && <Image src={ico} alt={`${title} image`} height={100} aspectRatio={1 / 1} format="png" class="ico" />}
 	<div>
 		<hgroup>
 			{
 				title ? (
 				<h3>
-					<a href={`/services/${link}`}>
+					<a href={link}>
 						{title}
 					</a>
 				</h3>
@@ -44,5 +46,14 @@ const {title, sub, link, img, date} = Astro.props;
 
 	article:has(img) > :nth-child(2) {
 		padding: 2rem;
+	}
+
+	.ico{
+		--w: 10rem;
+		height: var(--w);
+		width: var(--w);
+		display: block;
+		margin-inline: auto;
+		padding: 1rem
 	}
 </style>
