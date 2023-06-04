@@ -1,17 +1,27 @@
 ---
+import {getCollection} from "astro:content";
+
+const pages = await getCollection("footer");
+
 const today = new Date();
 ---
 
 <footer class="gb">
 	<div class="container">
+		<nav>
+				<ul>
+					{
+						pages.map((page) =>(
+							<li><a href={`/footer/${page.slug}`} class="secondary">{page.data.title}</a></li>
+							))
+						}
+			</ul>
+			<ul>
+				<li>
 
-		&copy; {today.getFullYear()} YOUR NAME HERE. All rights reserved.
+					&copy; {today.getFullYear()} Inspira Content.d.o.o.
+				</li>
+			</ul>
+		</nav>
 	</div>
-	<a href="/admin/index.html">LOGIN</a>
 </footer>
-<style>
-	footer {
-		padding: 25px;
-		text-align: center;
-	}
-</style>
