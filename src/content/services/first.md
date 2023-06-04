@@ -1,5 +1,5 @@
 ---
-title: Test from CMS
+title: Content writing?
 description: Lorem ipsum dolor sit amet
 image: /uploads/icon-code.png
 pubDate: 2023-06-04T16:22:11.280Z

@@ -1,5 +1,5 @@
 ---
-import { SITE_TITLE } from "../consts";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 
 import SEO from "../components/SEO.astro";
 import Navigation from "../components/Navigation.astro";
@@ -13,25 +13,34 @@ import "../styles/css.css";
 
 export interface Props {
   title: string;
-  desc: string;
+  desc?: string;
   image?: string;
   hero?: boolean;
 }
 
-const { title, desc, image = "/placeholder-social.jpg", hero } = Astro.props;
+const { title, desc = SITE_DESCRIPTION, image = "/placeholder-social.jpg", hero } = Astro.props;
 ---
 
 <!DOCTYPE html>
 <html lang="en" data-theme="dark">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <SEO title={title} desc={desc} />
     <title>{`${SITE_TITLE} - ${title}`}</title>
   </head>
   <body>
+<!--
+ _                      _       _           _                    ___                   _           
+| |                    (_)     | |         | |                  / __)                 | |          
+| |__   ____ _   _ ___  _ _____| |  _  ____| |__  _____  ____ _| |__ ____ ___  ____   | |__   ____ 
+|  _ \ / ___) | | / _ \| | ___ | |_/ )/ ___)  _ \(____ |/ ___|_   __) ___) _ \|    \  |  _ \ / ___)
+| | | | |    \ V / |_| | | ____|  _ (| |   | | | / ___ ( (___ _| | | |  | |_| | | | |_| | | | |    
+|_| |_|_|     \_/ \___/| |_____)_| \_)_|   |_| |_\_____|\____|_)_| |_|   \___/|_|_|_(_)_| |_|_|    
+                     (__/ 
+https://hrvojekrhac.from.hr/
+-->
     <Navigation fluid={false} />
     {hero && <Hero />}
     {

@@ -1,7 +1,7 @@
 ---
 import { Image } from "@astrojs/image/components";
 
-import logo from "../img/White logo - no background.png";
+import logo from "../img/White logo - no background.svg";
 
 
 const MainMenu = [
@@ -29,7 +29,7 @@ const { fluid = false } = Astro.props;
           <Image
           src={logo}
           height={100}
-          format="webp"
+          format="svg"
           alt="logo"
           aspectRatio={155/50}
           class="logo"

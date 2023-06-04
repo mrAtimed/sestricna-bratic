@@ -14,12 +14,12 @@ import test from "../../img/icons/icon-brackets.png"
     <div class="grid">
 
       {
-        data.map((item)=>(
+        data.map(({data, slug})=>(
           <ArticleBlock
-          title={item.data.title}
-          sub={item.data.description}
-          link={`/services/${item.slug}`}
-          ico={item.data.image}
+          title={data.title}
+          sub={data.description}
+          link={`/services/${slug}`}
+          ico={data.image}
           >
           </ArticleBlock>
         ))

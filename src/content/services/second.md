@@ -1,5 +1,5 @@
 ---
-title: Second post
+title: SEO optimization
 description: Lorem ipsum dolor sit amet
 image: /uploads/icon-connection.png
 pubDate: 2023-06-04T16:22:41.713Z

@@ -1,40 +1,27 @@
 ---
 import Main from "../../layouts/Main.astro";
-import { Image } from "@astrojs/image/components";
-import { SITE_TITLE, SITE_DESCRIPTION } from "../../consts";
 import { getCollection } from "astro:content";
-import FormattedDate from "../../components/FormattedDate.astro";
+import ArticleBlock from "../../components/util/ArticleBlock.astro";
 
 const posts = (await getCollection("blog")).sort(
   (a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
 );
 ---
 
-<Main hero={false}>
+<Main title="Blog" hero={false}>
   <div class="container">
     <section>
       <div class="grid">
         {
-          posts.map((post) => (
-            <article class="blog">
-              <Image
-              src={post.data.heroImage}
-              alt=""
-              format="webp"
-              height={200}
-              aspectRatio={16/9}              
-              />
-              <div class="blog-desc">
-                <hgroup>
-                  <a href={`/blog/${post.slug}/`}>
-                    <h4>
-                      <b>{post.data.title}</b>
-                    </h4>
-                  </a>
-                </hgroup>
-                <p>{post.data.description}</p>
-              </div>
-            </article>
+          posts.map(({data, slug}) => (
+            <ArticleBlock
+            title={data.title}
+            link={`/blog/${slug}`}
+            img={data.heroImage}
+            date={data.pubDate}
+            >
+            {data.description}
+            </ArticleBlock>
           ))
         }
       </div>
@@ -42,12 +29,3 @@ const posts = (await getCollection("blog")).sort(
   </div>
 </Main>
 
-<style>
-  .blog {
-    padding: 0;
-  }
-
-  .blog-desc {
-    padding: 1rem 2rem;
-  }
-</style>
