@@ -1,7 +1,7 @@
 ---
 title: Test from CMS
 description: Lorem ipsum dolor sit amet
-image: /uploads/icon-code.jpg
+image: /uploads/icon-code.png
 pubDate: 2023-06-04T16:22:11.280Z
 ---
 
