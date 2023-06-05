@@ -1,4 +1,6 @@
 ---
+import { Image } from "@astrojs/image/components";
+import logo from "../img/White logo - no background.svg";
 import "../styles/picos.css";
 import "../styles/css.css";
 ---
@@ -16,15 +18,19 @@ import "../styles/css.css";
       <article>
         <hgroup>
           <h1>404</h1>
-          <p>E jebiga..</p>
-          <hr />
-          Nunc nec ligula a tortor sollicitudin dictum in vel enim. Quisque facilisis
-          turpis vel eros dictum aliquam et nec turpis. Sed eleifend a dui nec ullamcorper.
-          Praesent vehicula lacus ac justo accumsan ullamcorper.
+          <b>NOT FOUND</b>
+          <p>The server cannot find the requested resource.</p>
         </hgroup>
-
-        <a href="/">Go back home..</a>
+        <hr />
+        <p aria-busy="true">Loading...</p>
+        <hr />
       </article>
     </dialog>
   </body>
 </html>
+
+<style>
+  h1 {
+    font-size: 3.4rem;
+  }
+</style>
