@@ -1,0 +1,43 @@
+---
+import { getCollection } from "astro:content";
+
+import MainLayout from "../../layouts/Main.astro";
+import Block from "../../components/util/ArticleBlock.astro";
+
+import Pagination from "../../components/Pagination.astro";
+
+export async function getStaticPaths({ paginate }) {
+  const allPosts = await getCollection("blog");
+
+  return paginate(allPosts, {
+    pageSize: 2,
+  });
+}
+
+const { page } = Astro.props;
+---
+
+<MainLayout title="My Blog">
+  <main>
+    <section class="container">
+      <hgroup>
+        <h1>Blogs..</h1>
+        <p>test: -samo 2 po stranici</p>
+        <hr />
+      </hgroup>
+      <div class="grid col2">
+        {
+          page.data.map(({ data, slug }) => (
+            <Block
+              title={data.title}
+              sub={data.description}
+              img={data.heroImage}
+              link={`/blog/${slug}/`}
+            />
+          ))
+        }
+      </div>
+    </section>
+    <Pagination prevUrl={page.url.prev} nextUrl={page.url.next} />
+  </main>
+</MainLayout>

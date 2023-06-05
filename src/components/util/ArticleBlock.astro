@@ -1,59 +1,63 @@
 ---
-import {Image} from "@astrojs/image/components";
+import { Image } from "@astrojs/image/components";
 import FormattedDate from "../FormattedDate.astro";
 interface Props {
-	title: string;
-	sub?: string;
-	date?: Date;
-	link?: string;
-	img?: any;
-	ico?: any;
+  title: string;
+  sub?: string;
+  date?: Date;
+  link?: string;
+  img?: any;
+  ico?: any;
 }
 
-const {title, sub, link, img, ico, date} = Astro.props;
+const { title, sub, link, img, ico, date } = Astro.props;
 ---
 
 <article>
-	{img && <Image src={img} alt={`${title} image`} height={350} aspectRatio={16 / 9} format="webp" />}
-	{ico && <Image src={ico} alt={`${title} image`} height={100} aspectRatio={1 / 1} format="webp" class="ico" />}
-	<div>
-		<hgroup >
-			{
-				title ? (
-				<h3>
-					<a href={link}>
-						{title}
-					</a>
-				</h3>
-				) : (
-					"---"
-				)
-			}
-			{sub && <p>{sub}</p>}
-			{date && <sub><FormattedDate date={date} /></sub>}
-		</hgroup>
-		<p>
-			<slot />
-		</p>
-	</div>
+  {
+    img && (
+      <Image
+        src={img}
+        alt={`${title} image`}
+        height={350}
+        aspectRatio={16 / 9}
+        format="webp"
+      />
+    )
+  }
+  {
+    ico && (
+      <Image
+        src={ico}
+        alt={`${title} image`}
+        height={100}
+        aspectRatio={1 / 1}
+        format="webp"
+        class="ico"
+      />
+    )
+  }
+  <div>
+    <hgroup>
+      {
+        title ? (
+          <h3>
+            <a href={link}>{title}</a>
+          </h3>
+        ) : (
+          "---"
+        )
+      }
+      {sub && <p>{sub}</p>}
+      {
+        date && (
+          <i>
+            - <FormattedDate date={date} />
+          </i>
+        )
+      }
+    </hgroup>
+
+    <slot />
+  </div>
 </article>
-
-<style is:global>
-	article:has(img) {
-		padding: 0;
-		border-radius:  0 0 2rem 2rem;
-	}
-
-	article:has(img) > :nth-child(2) {
-		padding: 2rem;
-	}
-
-	.ico{
-		--w: 10rem;
-		height: var(--w);
-		width: var(--w);
-		display: block;
-		margin-inline: auto;
-		padding: 1rem
-	}
-</style>

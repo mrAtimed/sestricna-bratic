@@ -3,20 +3,16 @@ import { Image } from "@astrojs/image/components";
 
 import logo from "../img/White logo - no background.svg";
 
-
 const MainMenu = [
-  { text: "Home", link: "/" },
+  { text: "Home", link: "/home" },
   { text: "Services", link: "/services/" },
   { text: "About", link: "/about/" },
-  // { text: "Contact", link: "/contact/" },
   { text: "Blog", link: "/blog/" },
-  // { text: "Categories", link: "/projects/cat/" },
 ];
 
 export interface Props {
   fluid?: boolean;
 }
-
 
 const { fluid = false } = Astro.props;
 ---
@@ -25,14 +21,14 @@ const { fluid = false } = Astro.props;
   <nav class={!fluid ? "container" : "container-fluid"}>
     <ul>
       <li>
-        <a href="/" class="contrast">
+        <a href="/home" class="contrast">
           <Image
-          src={logo}
-          height={100}
-          format="svg"
-          alt="logo"
-          aspectRatio={155/50}
-          class="logo"
+            src={logo}
+            height={100}
+            format="svg"
+            alt="logo"
+            aspectRatio={155 / 50}
+            class="logo"
           />
         </a>
       </li>

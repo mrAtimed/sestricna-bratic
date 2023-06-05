@@ -18,13 +18,13 @@ const { Content } = await post.render();
 
 <Main title={post.data.title} desc={post.data.description} hero={false}>
   <Image
-  src={post.data.heroImage}
-  alt={post.data.title}
-  height={200}
-  aspectRatio={16/9}
-  format="webp"
-  quality={72}
-/>
+    src={post.data.heroImage}
+    alt={post.data.title}
+    height={200}
+    aspectRatio={16 / 9}
+    format="webp"
+    quality={72}
+  />
   <div class="container">
     <h1>{post.data.title}</h1>
     <Content />

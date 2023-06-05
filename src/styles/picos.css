@@ -249,7 +249,7 @@ kbd {
   --mark-color: hsl(26, 38%, 24%);
   --ins-color: hsl(123, 43%, 39%);
   --del-color: hsl(0, 66%, 47%);
-  --blockquote-border-color: var(--muted-border-color);
+  --blockquote-border-color: var(--primary-focus);
   --blockquote-footer-color: var(--muted-color);
   --button-box-shadow: 0 0 0 hsla(0, 0%, 0%, 0);
   --button-hover-box-shadow: 0 0 0 hsla(0, 0%, 0%, 0);
@@ -338,7 +338,7 @@ kbd {
     --h5-color: hsl(205deg, 16%, 77%);
     --h6-color: hsl(206, 15%, 73%);
     --muted-color: hsl(205deg, 10%, 50%);
-    --muted-border-color: hsl(206, 29%, 17%);
+    --muted-border-color: rgba(253, 216, 53, 0.25);
     --primary: hsl(195deg, 85%, 41%);
     --primary-hover: hsl(195deg, 80%, 50%);
     --primary-focus: rgba(16, 149, 193, 0.25);
@@ -467,7 +467,7 @@ kbd {
   --blockquote-footer-color: var(--muted-color);
   --button-box-shadow: 0 0 0 rgba(0, 0, 0, 0);
   --button-hover-box-shadow: 0 0 0 rgba(0, 0, 0, 0);
-  --form-element-background-color: #242527; 
+  --form-element-background-color: #242527;
   --form-element-border-color: #374956;
   --form-element-color: var(--color);
   --form-element-placeholder-color: var(--muted-color);
@@ -1781,7 +1781,7 @@ input:not([type=checkbox], [type=radio], [type=range], [type=file])[type=search]
 th,
 td {
   padding: calc(var(--spacing) / 2) var(--spacing);
-  border-bottom: var(--border-width) solid var(--table-border-color);
+  border-bottom: var(--border-width) solid var(--primary-focus);
   color: var(--color);
   font-weight: var(--font-weight);
   font-size: var(--font-size);

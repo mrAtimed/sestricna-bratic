@@ -2,14 +2,12 @@
 import Main from "../layouts/Main.astro";
 ---
 
-<Main
-  title="About Me"
-  description="Lorem ipsum dolor sit amet"
-  pubDate={new Date("August 08 2021")}
-  updatedDate={new Date("August 08 2022")}
-  heroImage="/placeholder-about.jpg"
->
+<Main title="About Me" desc="Lorem ipsum dolor sit amet">
   <div class="container">
+    <hgroup>
+      <h1>About</h1>
+      <hr />
+    </hgroup>
     <p>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
       tempor incididunt ut labore et dolore magna aliqua. Vitae ultricies leo
@@ -23,7 +21,7 @@ import Main from "../layouts/Main.astro";
       amet.
     </p>
 
-    <p>
+    <blockquote>
       Morbi tristique senectus et netus. Id semper risus in hendrerit gravida
       rutrum quisque non tellus. Habitasse platea dictumst quisque sagittis
       purus sit amet. Tellus molestie nunc non blandit massa. Cursus vitae
@@ -34,7 +32,7 @@ import Main from "../layouts/Main.astro";
       quisque egestas diam. Cras ornare arcu dui vivamus arcu felis bibendum.
       Dignissim suspendisse in est ante in nibh mauris. Sed tempus urna et
       pharetra pharetra massa massa ultricies mi.
-    </p>
+    </blockquote>
 
     <p>
       Mollis nunc sed id semper risus in. Convallis a cras semper auctor neque.
@@ -64,14 +62,30 @@ import Main from "../layouts/Main.astro";
       cursus metus aliquam eleifend mi.
     </p>
 
-    <p>
-      Tempus quam pellentesque nec nam aliquam sem. Risus at ultrices mi tempus
-      imperdiet. Id porta nibh venenatis cras sed felis eget velit. Ipsum a arcu
-      cursus vitae. Facilisis magna etiam tempor orci eu lobortis elementum.
-      Tincidunt dui ut ornare lectus sit. Quisque non tellus orci ac. Blandit
-      libero volutpat sed cras. Nec tincidunt praesent semper feugiat nibh sed
-      pulvinar proin gravida. Egestas integer eget aliquet nibh praesent
-      tristique magna.
-    </p>
+    <table role="grid">
+      <thead
+        ><tr
+          ><th scope="col">#</th><th scope="col">Heading</th><th scope="col"
+            >Heading</th
+          ><th scope="col">Heading</th><th scope="col">Heading</th><th
+            scope="col">Heading</th
+          ></tr
+        ></thead
+      ><tbody
+        ><tr
+          ><th scope="row">1</th><td>Cell</td><td>Cell</td><td>Cell</td><td
+            >Cell</td
+          ><td>Cell</td></tr
+        ><tr
+          ><th scope="row">2</th><td>Cell</td><td>Cell</td><td>Cell</td><td
+            >Cell</td
+          ><td>Cell</td></tr
+        ><tr
+          ><th scope="row">3</th><td>Cell</td><td>Cell</td><td>Cell</td><td
+            >Cell</td
+          ><td>Cell</td></tr
+        ></tbody
+      >
+    </table>
   </div>
 </Main>
