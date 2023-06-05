@@ -4,27 +4,22 @@ import { getCollection } from "astro:content";
 import ArticleBlock from "../util/ArticleBlock.astro";
 
 const data = await getCollection("services");
-
-import test from "../../img/icons/icon-brackets.png"
 ---
 
-<section id="services">
+<section>
   <div class="container">
     <h2>Services</h2>
     <div class="grid">
-
       {
-        data.map(({data, slug})=>(
+        data.map(({ data, slug }) => (
           <ArticleBlock
-          title={data.title}
-          sub={data.description}
-          link={`/services/${slug}`}
-          ico={data.image}
-          >
-          </ArticleBlock>
+            title={data.title}
+            sub={data.description}
+            link={`/services/${slug}`}
+            ico={data.image}
+          ></ArticleBlock>
         ))
       }
-
     </div>
   </div>
 </section>

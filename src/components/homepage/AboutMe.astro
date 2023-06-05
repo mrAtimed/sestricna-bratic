@@ -1,20 +1,19 @@
 ---
-import CountUp from "../homepage/CountUp"
+import CountUp from "../homepage/CountUp";
 import { Image } from "@astrojs/image/components";
-import img from "../../img/400x400.png"
+import img from "../../img/400x400.png";
 ---
 
-<section id="aboutMe">
+<section>
   <div class="container">
     <div class="grid v-center">
       <Image
-      format="webp"
-      src={img}
-      alt="Sestricna Bracit placehodler"
-      width={400}
-      height={400}
-      quality={52}
-      
+        format="webp"
+        src={img}
+        alt="Sestricna Bracit placehodler"
+        width={400}
+        height={400}
+        quality={52}
       />
       <div class="span2">
         <hgroup>
@@ -38,6 +37,5 @@ import img from "../../img/400x400.png"
         </div>
       </div>
     </div>
-    <CountUp client:visible></CountUp>
   </div>
 </section>
