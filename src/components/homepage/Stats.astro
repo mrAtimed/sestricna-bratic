@@ -2,68 +2,67 @@
 import { Image } from "@astrojs/image/components";
 import CountUp from "./CountUp";
 
-
 import book from "../../img/icons/icon-brackets.png";
 import browser from "../../img/icons/icon-code.png";
 import download from "../../img/icons/icon-connection.png";
 import code from "../../img/icons/icon-connection.png";
 
-
 const data = [
-	{ico: book, text: "happy clients", num: "3368"},
-	{ico: browser, text: "projects completed", num: "937"},
-	{ico: download, text: "filed downloaded", num: "438"},
-	{ico: code, text: "lines of code", num: "5438"},
+  { ico: book, text: "happy clients", num: "3368" },
+  { ico: browser, text: "projects completed", num: "937" },
+  { ico: download, text: "filed downloaded", num: "438" },
+  { ico: code, text: "lines of code", num: "5438" },
 ];
 ---
 
 <section class="bg-something">
-	<div class="container">
-		<div class="grid col2">
-			{
-				data.map(({ico, text, num}, N) => (
-					<div class="stats">
-						<Image
-						src={ico}
-						alt=""
-						height={100}
-						width={100}
-						quality={50}
-						format="webp"
-						loading="lazy"
-						class="icons"
-						/>
-						<hgroup>
-							<br />
-							<h4><CountUp end={num} steps={26} client:visible/></h4>
-							<p>{text}</p>
-						</hgroup>
-					</div>
-				))
-			}
-		</div>
-	</div>
+  <div class="container">
+    <div class="grid temp">
+      {
+        data.map(({ ico, text, num }, N) => (
+          <div class="stats">
+            <Image
+              src={ico}
+              alt=""
+              height={100}
+              width={100}
+              quality={50}
+              format="webp"
+              loading="lazy"
+              class="icons"
+            />
+            <hgroup>
+              <h3>
+                <CountUp end={num} steps={26} client:visible />
+              </h3>
+              <p>{text}</p>
+            </hgroup>
+          </div>
+        ))
+      }
+    </div>
+  </div>
 </section>
 
 <style>
-	.stats {
-		text-align: center;
-		padding-block: 1rem;
-	}
-	@media (min-width: 768px) {
-		.stats {
-		}
-	}
+  .temp {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media (min-width: 768px) {
+    .temp {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
 
-	.bg-something {
-		padding-block: 4rem;
-		background: url(../img/bg/some-facts-bg.png) center center no-repeat;
-		background-size: cover;
-		background-attachment: fixed;
-	}
-	.icons {
-		--w : 3rem;
-		height: var(--w);
-		width: var(--w);
-	}
+  .bg-something {
+    padding-block: 4rem;
+    background: url(../img/bg/some-facts-bg.png) center center no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+  }
+  .icons {
+    --w: 3rem;
+    height: var(--w);
+    width: var(--w);
+  }
 </style>
