@@ -5,17 +5,21 @@ const { prevUrl, nextUrl } = Astro.props;
 <div class="container">
   <section class="grid">
     {
-      prevUrl && (
-        <a href={prevUrl} role="button">
+      prevUrl ? (
+        <a href={prevUrl} role="button" class="outline">
           PREV
         </a>
+      ) : (
+        <hr />
       )
     }
     {
-      nextUrl && (
-        <a href={nextUrl} role="button">
+      nextUrl ? (
+        <a href={nextUrl} role="button" class="outline">
           NEXT
         </a>
+      ) : (
+        <hr />
       )
     }
   </section>
