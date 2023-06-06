@@ -1,11 +1,9 @@
 import { defineCollection, z } from 'astro:content';
 
 const blog = defineCollection({
-	// Type-check frontmatter using a schema
 	schema: z.object({
 		title: z.string(),
 		description: z.string(),
-		// Transform string to Date object
 		pubDate: z
 			.string()
 			.or(z.date())
@@ -18,11 +16,9 @@ const blog = defineCollection({
 	}),
 });
 const footer = defineCollection({
-	// Type-check frontmatter using a schema
 	schema: z.object({
 		title: z.string(),
 		description: z.string(),
-		// Transform string to Date object
 		pubDate: z
 			.string()
 			.or(z.date())
@@ -36,11 +32,9 @@ const footer = defineCollection({
 });
 
 const services = defineCollection({
-	// Type-check frontmatter using a schema
 	schema: z.object({
 		title: z.string(),
 		description: z.string(),
-		// Transform string to Date object
 		image: z.string().optional(),
 	}),
 });
