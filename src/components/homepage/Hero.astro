@@ -1,8 +1,11 @@
 ---
+import { Image } from "@astrojs/image/components";
+import slika from "../../img/circle/hollowCircle.svg"
 ---
 
 <div class="hero">
-  <div class="inside container">
+  <Image src={slika} alt="" height={400} width={400} format="svg" class="sranje"/>
+    <div class="inside container">
     <sub>HELLO I'M</sub>
     <hgroup>
       <h1 class="primary">Sestricna Bratic</h1>
@@ -12,23 +15,50 @@
       </p>
       <a href="#" target="_blank" rel="noopener noreferrer" class="outline"></a>
     </hgroup>
-    <a href="/" class="outline btn-round" role="button">Download CV</a>
+    <a href="#" class="outline" role="button">Download CV</a>
   </div>
 </div>
 
 <style>
+  .sranje{
+    position: absolute;
+    top: -5rem;
+    right: -10rem;
+    width: 19rem;
+    height: 19rem;
+    animation: blob 6s ease-in-out alternate-reverse infinite;
+    z-index: -1;
+    opacity: .5;
+  }
+
   .hero {
+    position: relative;
     background: url(../img/bg/slider-bg.png) center center no-repeat;
     background-size: cover;
     background-attachment: fixed;
     margin-block: 0;
     text-align: center;
     padding-block: 20vh;
+    z-index: -10;
+    overflow-x: hidden;
   }
   h1 {
     color: var(--primary) !important;
     font-weight: 700;
     font-family: "Trebuchet MS", sans-serif;
     text-transform: uppercase;
+    z-index: 10;
+  }
+
+  @keyframes blob {
+    0%{
+      transform: translateY(2rem) scale(1);
+    }
+    
+    100%{
+      transform: translateY(0rem) scale(1.1);
+
+
+    }
   }
 </style>

@@ -15,7 +15,7 @@ const data = await getCollection("services");
           <ArticleBlock
             title={data.title}
             sub={data.description}
-            link={`/services/${slug}`}
+            link={`/services/${slug}/`}
             ico={data.image}
           ></ArticleBlock>
         ))

@@ -6,7 +6,6 @@ import Navigation from "../components/Navigation.astro";
 import Footer from "../components/Footer.astro";
 import Hero from "../components/homepage/Hero.astro";
 
-import "../styles/picos.css";
 import "../styles/css.css";
 
 /////////////////////////////////////////////////////////////////////////
@@ -18,7 +17,7 @@ export interface Props {
   hero?: boolean;
 }
 
-const { title, desc = SITE_DESCRIPTION, image = "/placeholder-social.jpg", hero } = Astro.props;
+const { title, desc = SITE_DESCRIPTION, image = "/placeholder.jpg", hero } = Astro.props;
 ---
 
 <!DOCTYPE html>

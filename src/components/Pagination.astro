@@ -5,14 +5,14 @@ const { prevUrl, nextUrl } = Astro.props;
 <div class="container">
   {
     prevUrl && (
-      <a href={prevUrl} role="button" class="outline">
+      <a href={`${prevUrl}/`} role="button" class="outline">
         PREV
       </a>
     )
   }
   {
     nextUrl && (
-      <a href={nextUrl} role="button" class="outline">
+      <a href={`${nextUrl}/`} role="button" class="outline">
         NEXT
       </a>
     )

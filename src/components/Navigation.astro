@@ -4,7 +4,7 @@ import { Image } from "@astrojs/image/components";
 import logo from "../img/White logo - no background.svg";
 
 const MainMenu = [
-  { text: "Home", link: "/home" },
+  { text: "Home", link: "/home/" },
   { text: "Services", link: "/services/" },
   { text: "About", link: "/about/" },
   { text: "Blog", link: "/blog/" },
@@ -21,7 +21,7 @@ const { fluid = false } = Astro.props;
   <nav class={!fluid ? "container" : "container-fluid"}>
     <ul>
       <li>
-        <a href="/home" class="contrast">
+        <a href="/home/" class="contrast">
           <Image
             src={logo}
             height={100}
@@ -47,8 +47,6 @@ const { fluid = false } = Astro.props;
           </li>
         ))
       }
-      <!-- <li><a href="#" role="button">Button</a></li> -->
-      <!-- <li><SolidThemeSwitcher client:idle /></li> -->
     </ul>
     <ul id="mob">
       <details role="list" dir="rtl">
