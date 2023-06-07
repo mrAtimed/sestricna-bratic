@@ -2,7 +2,7 @@
 import { getCollection } from "astro:content";
 
 import MainLayout from "../../layouts/Main.astro";
-import Block from "../../components/util/ArticleBlock.astro";
+import Card from "../../components/util/Card.astro";
 
 import Pagination from "../../components/Pagination.astro";
 
@@ -28,7 +28,7 @@ const { page } = Astro.props;
       <div class="grid col2">
         {
           page.data.map(({ data, slug }) => (
-            <Block
+            <Card
               title={data.title}
               sub={data.description}
               img={data.heroImage}

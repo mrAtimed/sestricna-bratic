@@ -1,6 +1,6 @@
 ---
 import Main from "../../layouts/Main.astro";
-import ArticleBlock from "../../components/util/ArticleBlock.astro";
+import Card from "../../components/util/Card.astro";
 
 import { getCollection } from "astro:content";
 const posts = await getCollection("services");
@@ -23,7 +23,7 @@ const posts = await getCollection("services");
       <div class="grid">
         {
           posts.map(({ data, slug }) => (
-            <ArticleBlock
+            <Card
               title={data.title}
               sub={data.description}
               ico={data.image}

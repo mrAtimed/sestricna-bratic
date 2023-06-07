@@ -1,6 +1,6 @@
 ---
 import { getCollection } from "astro:content";
-import ArticleBlock from "../util/ArticleBlock.astro";
+import Card from "../util/Card.astro";
 const data = await getCollection("services");
 ---
 
@@ -10,7 +10,7 @@ const data = await getCollection("services");
     <div class="grid">
       {
         data.map(({ data, slug }) => (
-          <ArticleBlock
+          <Card
             title={data.title}
             sub={data.description}
             link={`/services/${slug}/`}

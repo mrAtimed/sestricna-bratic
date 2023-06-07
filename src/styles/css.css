@@ -2018,9 +2018,9 @@ article>footer {
 	border-bottom-left-radius: var(--border-radius);
 }
 
-/**
+/** /////////////////////////////////////////////////////////
  * Modal (<dialog>)
- */
+ ///////////////////////////////////////////////////////// */
 :root {
 	--scrollbar-width: 0px;
 }
@@ -2164,9 +2164,9 @@ dialog[open=false] {
 	}
 }
 
-/**
+/** /////////////////////////////////////////////////////////
  * Nav
- */
+ ///////////////////////////////////////////////////////// */
 :where(nav li)::before {
 	float: left;
 	content: "​";
@@ -2581,9 +2581,9 @@ a[aria-busy=true] {
 	}
 }
 
-/**
+/** /////////////////////////////////////////////////////////
  * Tooltip ([data-tooltip])
- */
+ ///////////////////////////////////////////////////////// */
 [data-tooltip] {
 	position: relative;
 }
@@ -2886,9 +2886,6 @@ textarea,
 	-ms-touch-action: manipulation;
 }
 
-[dir=rtl] {
-	direction: rtl;
-}
 
 /**
 * Reduce Motion Features
@@ -2980,9 +2977,17 @@ img {
 }
 
 main {
-	min-height: 60vh;
+	min-height: 70vh;
 }
 
+article:has(img) {
+	padding: 0;
+	border-radius: 0 0 2rem 2rem;
+}
+
+article:has(img)> :nth-child(2) {
+	padding: 2rem;
+}
 
 article:hover,
 article:focus-within {
@@ -3079,14 +3084,9 @@ h3 {
 	text-transform: uppercase;
 }
 
-article:has(img) {
-	padding: 0;
-	border-radius: 0 0 2rem 2rem;
-}
+/* ////////////////////////////////////////// */
 
-article:has(img)> :nth-child(2) {
-	padding: 2rem;
-}
+
 
 .ico {
 	--w: 10rem;
@@ -3097,10 +3097,20 @@ article:has(img)> :nth-child(2) {
 	padding: 1rem;
 }
 
+/* ////////////////////////////////////////// */
 
-
-.ff-TNR {
-	font-weight: 900;
-	text-transform: uppercase;
+.ff-sans {
 	font-family: "Times New Roman", serif !important;
+}
+
+.ff-serif {
+	font-family: "Times New Roman", serif !important;
+}
+
+.ff-mono {
+	font-family: 'Courier New', monospace;
+}
+
+.ff-cursive {
+	font-family: 'Brush Script MT', cursive;
 }

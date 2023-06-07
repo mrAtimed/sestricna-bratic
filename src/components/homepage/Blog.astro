@@ -1,6 +1,6 @@
 ---
 import { getCollection } from "astro:content";
-import ArticleBlock from "../util/ArticleBlock.astro";
+import Card from "../util/Card.astro";
 
 const data = await getCollection("blog");
 const posts = data.slice(0, 2);
@@ -12,14 +12,14 @@ const posts = data.slice(0, 2);
     <div class="grid">
       {
         posts.map(({ data, slug }, N) => (
-          <ArticleBlock
+          <Card
             title={data.title}
             date={data.pubDate}
             link={`/blog/${slug}/`}
             img={data.heroImage}
           >
             {data.description}
-          </ArticleBlock>
+          </Card>
         ))
       }
     </div>
