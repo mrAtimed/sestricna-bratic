@@ -70,8 +70,8 @@ const { fluid = false } = Astro.props;
     </ul>
   </nav>
 </div>
-
-<style is:global>
+<!-- Critical CSS je uvjek is:inline -->
+<style is:inline>
   .logo {
     --w: 4rem;
     height: var(--w);

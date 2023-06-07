@@ -1,6 +1,8 @@
 ---
 import { Image } from "@astrojs/image/components";
 import slika from "../../img/circle/hollowCircle.svg";
+
+// const backgroundColor = "rgb(24 121 78)";
 ---
 
 <div class="hero">
@@ -11,6 +13,7 @@ import slika from "../../img/circle/hollowCircle.svg";
     width={400}
     format="svg"
     class="blob"
+    loading="lazy"
   />
   <div class="container">
     <sub>HELLO I'M</sub>
@@ -26,7 +29,8 @@ import slika from "../../img/circle/hollowCircle.svg";
   </div>
 </div>
 
-<style>
+<!-- Critical CSS je uvjek is:inline -->
+<style is:inline>
   .blob {
     position: absolute;
     top: -5rem;
