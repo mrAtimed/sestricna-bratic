@@ -1,14 +1,21 @@
 ---
 import { Image } from "@astrojs/image/components";
-import slika from "../../img/circle/hollowCircle.svg"
+import slika from "../../img/circle/hollowCircle.svg";
 ---
 
 <div class="hero">
-  <Image src={slika} alt="" height={400} width={400} format="svg" class="sranje"/>
-    <div class="inside container">
+  <Image
+    src={slika}
+    alt=""
+    height={400}
+    width={400}
+    format="svg"
+    class="blob"
+  />
+  <div class="container">
     <sub>HELLO I'M</sub>
     <hgroup>
-      <h1 class="primary">Sestricna Bratic</h1>
+      <h1 class="ff-TNR">Sestricna Bratic</h1>
       <p>
         Lorem ipsum, dolor sit amet consectetur adipisicing elit.<br /> Quos explicabo
         assumenda magni nesciunt.
@@ -20,15 +27,15 @@ import slika from "../../img/circle/hollowCircle.svg"
 </div>
 
 <style>
-  .sranje{
+  .blob {
     position: absolute;
     top: -5rem;
     right: -10rem;
-    width: 19rem;
-    height: 19rem;
+    width: 22rem;
+    height: 22rem;
     animation: blob 6s ease-in-out alternate-reverse infinite;
     z-index: -1;
-    opacity: .5;
+    opacity: 0.75;
   }
 
   .hero {
@@ -42,23 +49,14 @@ import slika from "../../img/circle/hollowCircle.svg"
     z-index: -10;
     overflow-x: hidden;
   }
-  h1 {
-    color: var(--primary) !important;
-    font-weight: 700;
-    font-family: "Trebuchet MS", sans-serif;
-    text-transform: uppercase;
-    z-index: 10;
-  }
 
   @keyframes blob {
-    0%{
-      transform: translateY(2rem) scale(1);
+    0% {
+      transform: translateX(0);
     }
-    
-    100%{
-      transform: translateY(0rem) scale(1.1);
 
-
+    100% {
+      transform: translateX(2rem);
     }
   }
 </style>

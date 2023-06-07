@@ -7,8 +7,8 @@ class: invert
 ## left to do..
 
  **CMS**
-- [ ] services
-- [ ] footer nav 
+- [x] services
+- [x] footer nav 
 - [ ] sliders
 - [x] reference ??
 
@@ -20,11 +20,11 @@ class: invert
 - [x] image compression / .webp
 
 **textovi**
-- [ ] pravila privatnosti
+- [x] pravila privatnosti
 - [ ] cookie policy
 - [ ] potpis
 
 
 **stilovi**
 - [x] malo stilizirati
-- [ ] dodatne animacije
+- [x] dodatne animacije

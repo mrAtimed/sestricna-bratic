@@ -3096,3 +3096,11 @@ article:has(img)> :nth-child(2) {
 	margin-inline: auto;
 	padding: 1rem;
 }
+
+
+
+.ff-TNR {
+	font-weight: 900;
+	text-transform: uppercase;
+	font-family: "Times New Roman", serif !important;
+}

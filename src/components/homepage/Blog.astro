@@ -11,14 +11,14 @@ const posts = data.slice(0, 2);
     <h2>Blog</h2>
     <div class="grid">
       {
-        posts.map((post) => (
+        posts.map(({ data, slug }, N) => (
           <ArticleBlock
-            title={post.data.title}
-            date={post.data.pubDate}
-            link={`/blog/${post.slug}/`}
-            img={post.data.heroImage}
+            title={data.title}
+            date={data.pubDate}
+            link={`/blog/${slug}/`}
+            img={data.heroImage}
           >
-            {post.data.description}
+            {data.description}
           </ArticleBlock>
         ))
       }

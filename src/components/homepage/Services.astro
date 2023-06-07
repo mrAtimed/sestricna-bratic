@@ -1,8 +1,6 @@
 ---
 import { getCollection } from "astro:content";
-
 import ArticleBlock from "../util/ArticleBlock.astro";
-
 const data = await getCollection("services");
 ---
 
@@ -17,7 +15,7 @@ const data = await getCollection("services");
             sub={data.description}
             link={`/services/${slug}/`}
             ico={data.image}
-          ></ArticleBlock>
+          />
         ))
       }
     </div>
