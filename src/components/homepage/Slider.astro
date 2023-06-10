@@ -1,19 +1,26 @@
 ---
+import {Image} from "@astrojs/image/components";
+import slika from "../../img/circle/hollowCircle.svg";
 ---
 
-<div class="slider-container" >
-  <div class="slider  ">
+<div class="slider-container">
+  <div class="blob">
+    <Image src={slika} alt="" height={400} width={400} format="svg" loading="lazy" />
+    <Image src={slika} alt="" height={400} width={400} format="svg" loading="lazy" />
+  </div>
+
+  <div class="slider">
     <div class="slides">
       <div id="slides__1" class="slide">
-        
         <hgroup class="container">
           <sub>HELLO I'M</sub>
           <h1>SESTRICNA BRATIC</h1>
-          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit..<br>
-            Quos explicabo assumenda magni nesciunt.</p>
-          </hgroup>
-          <a href="http://" target="_blank" rel="noopener noreferrer" role="button" class="outline">Button</a>
-
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit..<br />
+            Quos explicabo assumenda magni nesciunt.
+          </p>
+        </hgroup>
+        <a href="http://" target="_blank" rel="noopener noreferrer" role="button" class="outline">Button</a>
       </div>
       <div id="slides__2" class="slide">
         <span class="slide__text">2</span>
@@ -35,75 +42,102 @@
   </div>
 </div>
 
-
 <style>
+  .slider-container {
+    --h: 60vh;
 
-.slider-container {
-  --h: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    position: relative;
+    overflow: hidden  ;
+  }
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-}
+  .slider {
+    width: 100%;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+  }
 
-.slider {
-  width: 100%;
-  text-align: center;
-  overflow: hidden;
-  position: relative;
-}
+  .slides {
+    display: flex;
+    overflow-x: scroll;
+    position: relative;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+  }
 
-.slides {
-  display: flex;
-  overflow-x: scroll;
-  position: relative;
-  scroll-behavior: smooth;
-  scroll-snap-type: x mandatory;
-}
+  .slide:nth-of-type(even) {
+    background-color: rgba(250, 246, 212, 0.33);
+  }
 
-.slide:nth-of-type(even) {
-  background-color: rgba(250, 246, 212, .33);
-}
+  .slide {
+    height: var(--h);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    width: 100%;
+    scroll-snap-align: center;
+  }
 
-.slide {
-  height: var(--h);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  flex-shrink: 0;
-  width: 100%;
-  scroll-snap-align: center;
-}
+  .slider__nav {
+    box-sizing: border-box;
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    width: 200px;
+    margin-left: -100px;
+    text-align: center;
+  }
 
-.slider__nav {
-  box-sizing: border-box;
-  position: absolute;
-  bottom: 5%;
-  left: 50%;
-  width: 200px;
-  margin-left: -100px;
-  text-align: center;
-}
+  .slider__navlink {
+    display: inline-block;
+    height: 15px;
+    width: 15px;
+    border-radius: 3rem;
+    background-color: var(--h6-color);
+    margin: 0 10px 0 10px;
+    transition: width 200ms;
+  }
 
-.slider__navlink {
-  display: inline-block;
-  height: 15px;
-  width: 15px;
-  border-radius: 3rem;
-  background-color: var(--h6-color);
-  margin: 0 10px 0 10px;
-  transition: width 200ms;
-}
+  .slider__navlink:hover,
+  .slider__navlink:focus-within,
+  .slider__navlink:active {
+    width: 1.5em;
+    background-color: var(--primary-hover);
+  }
 
-.slider__navlink:hover,
-.slider__navlink:focus-within,
-.slider__navlink:active
+  .blob > * {
+    position: absolute;
+    z-index: -1;
+    animation: blob 6s ease-in-out alternate-reverse infinite;
+  }
 
-{
-  width: 1.5em;
-  background-color: var(--primary-hover);
-}
+  .blob > *:nth-child(1) {
+    top: -5rem;
+    right: -10rem;
+    width: 22rem;
+    height: 22rem;
 
+  }
+  .blob > *:nth-child(2) {
+    --s : 30rem;
+    bottom: var( --s /3);
+    left: -10rem;
+    width: var(--s);
+    height: var(--s);
+  }
+  @keyframes blob {
+    0% {
+      transform: translateX(0);
+    }
+
+    100% {
+      transform: translateX(2rem);
+    }
+  }
 </style>
