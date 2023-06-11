@@ -13,45 +13,45 @@ local_backend: true
 
 collections:
 
-- name: "blog" # Used in routes, e.g., /admin/collections/blog
+- name: "blog" 
   label: "Blogovi" # Used in the UI
-  folder: "src/content/blog/" # The path to the folder where the documents are stored
-  create: true # Allow users to create new documents in this collection
-  slug: "{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
-  fields: # The fields for each document, usually in front matter
+  folder: "src/content/blog/" 
+  create: true 
+  slug: "{{slug}}"
+  fields: 
       - {label: "Naslov", name: "title", widget: "string"}
       - {label: "Kratki Opis", name: "description", widget: "string"}
       - {label: "Publish Datum", name: "pubDate", widget: "datetime"}
       - {label: "Hero image", name: "heroImage", widget: "image"}
       - {label: "Body", name: "body", widget: "markdown"}
-- name: "slider" # Used in routes, e.g., /admin/collections/blog
+- name: "slider" 
   label: "Slider Početna" # Used in the UI
-  folder: "src/content/slider/" # The path to the folder where the documents are stored
-  create: true # Allow users to create new documents in this collection
-  slug: "{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
-  fields: # The fields for each document, usually in front matter
+  folder: "src/content/slider/" 
+  create: true 
+  slug: "{{slug}}"
+  fields: 
       - {label: "Sub", name: "sub", widget: "string"}
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Desc", name: "desc", widget: "string"}
       - {label: "Btn", name: "btn", widget: "string"}
       - {label: "Link", name: "link", widget: "string"}
-- name: "usluge" # Used in routes, e.g., /admin/collections/blog
+- name: "usluge" 
   label: "Usluge Stranice" # Used in the UI
-  folder: "src/content/services/" # The path to the folder where the documents are stored
-  create: true # Allow users to create new documents in this collection
-  slug: "{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
-  fields: # The fields for each document, usually in front matter
+  folder: "src/content/services/" 
+  create: true 
+  slug: "{{slug}}"
+  fields: 
       - {label: "Naslov", name: "title", widget: "string"}
       - {label: "Kratki Opis", name: "description", widget: "string"}
       - {label: "Publish Datum", name: "pubDate", widget: "datetime"}
       - {label: "image", name: "image", widget: "image"}
       - {label: "Body", name: "body", widget: "markdown"}
-- name: "footer" # Used in routes, e.g., /admin/collections/blog
+- name: "footer" 
   label: "Navigacija Footer" # Used in the UI
-  folder: "src/content/footer/" # The path to the folder where the documents are stored
-  create: true # Allow users to create new documents in this collection
-  slug: "{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
-  fields: # The fields for each document, usually in front matter
+  folder: "src/content/footer/" 
+  create: true 
+  slug: "{{slug}}"
+  fields: 
       - {label: "Naslov", name: "title", widget: "string"}
       - {label: "Kratki Opis", name: "description", widget: "string"}
       - {label: "Publish Datum", name: "pubDate", widget: "datetime"}
