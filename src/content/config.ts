@@ -46,7 +46,7 @@ const slider = defineCollection(
 		title: z.string(),
 		desc: z.string(),
 		btn: z.string().optional(),
-		slug: z.string().optional(),
+		link: z.string().optional(),
 	})
 }
 
