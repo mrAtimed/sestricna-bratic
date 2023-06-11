@@ -39,4 +39,16 @@ const services = defineCollection({
 	}),
 });
 
-export const collections = { blog , footer, services};
+const slider = defineCollection(
+{
+	schema: z.object({
+		sub: z.string(),
+		title: z.string(),
+		desc: z.string(),
+		btn: z.string().optional(),
+		slug: z.string().optional(),
+	})
+}
+
+)
+export const collections = { blog , footer, services, slider};

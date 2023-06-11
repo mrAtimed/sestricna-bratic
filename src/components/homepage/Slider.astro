@@ -1,10 +1,13 @@
 ---
 import {Image} from "@astrojs/image/components";
 import slika from "../../img/circle/hollowCircle.svg";
----
 
-<div class="slider-container">
-  <div class="blob">
+import Main from "../../layouts/Main.astro";
+---
+<Main> 
+
+  <div class="slider-container">
+    <div class="blob">
     <Image src={slika} alt="" height={400} width={400} format="svg" loading="lazy" />
     <Image src={slika} alt="" height={400} width={400} format="svg" loading="lazy" />
   </div>
@@ -41,6 +44,7 @@ import slika from "../../img/circle/hollowCircle.svg";
     </div>
   </div>
 </div>
+</Main>
 
 <style>
   .slider-container {
@@ -114,22 +118,23 @@ import slika from "../../img/circle/hollowCircle.svg";
   .blob > * {
     position: absolute;
     z-index: -1;
-    animation: blob 6s ease-in-out alternate-reverse infinite;
   }
-
+  
   .blob > *:nth-child(1) {
     top: -5rem;
-    right: -10rem;
-    width: 22rem;
-    height: 22rem;
+    right: -8rem;
+    width: 17rem;
+    height: 17rem;
+    animation: blob 6s ease-in-out alternate-reverse infinite;
 
   }
   .blob > *:nth-child(2) {
-    --s : 30rem;
-    bottom: var( --s /3);
+    --s : 24rem;
+    bottom: -10rem;
     left: -10rem;
     width: var(--s);
     height: var(--s);
+    animation: blob 8s ease-in-out alternate-reverse infinite;
   }
   @keyframes blob {
     0% {
