@@ -1,7 +1,7 @@
 ---
 sub: hello i'm
 title: Drugi Slider
-desc: Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-btn:  Download CV
+desc: Tamo neki opis tek toliko
+btn: Jos jedan download CV
 link: /cv.pdf/
 ---
