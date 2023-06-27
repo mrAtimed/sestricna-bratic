@@ -7,6 +7,7 @@ const MainMenu = [
   { text: "Home", link: "/home/" },
   { text: "Services", link: "/services/" },
   { text: "About", link: "/about/" },
+  { text: "Contact", link: "/contact/" },
   { text: "Blog", link: "/blog/" },
 ];
 
@@ -37,11 +38,7 @@ const { fluid = false } = Astro.props;
       {
         MainMenu.map(({ text, link }, N) => (
           <li>
-            <a
-              class="secondary"
-              aria-current={Astro.url.pathname == link && "page"}
-              href={link}
-            >
+            <a class="secondary" aria-current={Astro.url.pathname == link && "page"} href={link}>
               {text}
             </a>
           </li>
@@ -50,16 +47,12 @@ const { fluid = false } = Astro.props;
     </ul>
     <ul id="mob">
       <details role="list" dir="rtl">
-        <summary aria-haspopup="listbox" role="link" class="contrast">☰</summary
-        >
+        <summary aria-haspopup="listbox" role="link" class="contrast">☰</summary>
         <ul role="listbox">
           {
             MainMenu.map(({ text, link }, N) => (
               <li>
-                <a
-                  href={link}
-                  aria-current={Astro.url.pathname == link && "page"}
-                >
+                <a href={link} aria-current={Astro.url.pathname == link && "page"}>
                   {text}
                 </a>
               </li>

@@ -3,3 +3,4 @@
 
 export const SITE_TITLE = 'Sestricna-Bratic';
 export const SITE_DESCRIPTION = 'WIP!';
+export const PAGINATION = 2;
