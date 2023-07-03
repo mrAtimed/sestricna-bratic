@@ -8,6 +8,6 @@ import preact from "@astrojs/preact";
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://example.com',
+  site: 'https://inspira-content.hr/',
   integrations: [mdx(), sitemap(), compress(), image(), preact()]
 });
